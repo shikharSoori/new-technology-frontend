@@ -1,113 +1,311 @@
+"use client";
+import { getData } from "./lib/getData";
 import Image from "next/image";
+import Slider from "react-slick";
+import CountUp from "react-countup";
 
-export default function Home() {
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import solution from "../assets/Solution.png";
+import icon1 from "../assets/icon-1.png";
+import icon2 from "../assets/icon-2.png";
+import icon3 from "../assets/icon-3.png";
+import icon4 from "../assets/icon-4.png";
+import why1 from "../assets/icon-4.png";
+import why2 from "../assets/icon-4.png";
+import why3 from "../assets/why3.avif";
+
+// Counter component with delayed animation
+
+const Count = ({ number, title, duration }: any) => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <div className="number odometer h1">
+      <CountUp
+        duration={duration}
+        className="counter  odometer h1"
+        end={number}
+      />
+      <span>{title}</span>
+    </div>
   );
-}
+};
+const Home = () => {
+  // const data = getData("product-app/our-partner");
+  function SampleNextArrow() {
+    return <button type="button" className="slick-next"></button>;
+  }
+
+  function SamplePrevArrow() {
+    return <button type="button" className="slick-prev"></button>;
+  }
+  var settings = {
+    // speed: 1000000,
+    dots: true,
+    // addaptiveHeight: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    // infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // responsive: [
+    //   {
+    //     breakpoint: 1200,
+    //     settings: {
+    //       arrows: false,
+    //       dots: false,
+    //     },
+    //   },
+    // ],
+  };
+
+  return (
+    <>
+      <section className="hero-slider hero-transparent-bg bg-img fix">
+        <div className="hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
+          <Slider {...settings}>
+            <div>Hello</div>
+            <div>Hello</div>
+          </Slider>
+        </div>
+      </section>
+      <section
+        className="funfacts-section fix wow fadeInUp"
+        data-wow-duration="1s"
+        data-wow-delay=".5s"
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <div className="section-title section-title--style_2 text-center">
+                <h2 className="h1 title">
+                  Sucessfully <span>completed</span> 2100+ <span>projects</span>{" "}
+                  with numbers of satisfied client
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div className="row mtn-40">
+            <div className="col-md-3 col-sm-6">
+              <div className="counterup-item mt-40">
+                <Count
+                  className="odometer h1"
+                  duration={10}
+                  number={100}
+                  title="+"
+                />
+                <h5>Satisfied Clients</h5>
+              </div>
+            </div>
+            <div className="col-md-3 col-sm-6">
+              <div className="counterup-item mt-40">
+                <span className="odometer h1" data-count="950"></span>
+                <h5>Completed Projects</h5>
+              </div>
+            </div>
+            <div className="col-md-3 col-sm-6">
+              <div className="counterup-item mt-40">
+                <span className="odometer h1" data-count="600"></span>
+                <h5>Cup Coffee</h5>
+              </div>
+            </div>
+            <div className="col-md-3 col-sm-6">
+              <div className="counterup-item mt-40">
+                <span className="odometer h1" data-count="95 "></span>
+                <h5>Awards Winning</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="policy-area-02 section-padding fix">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-5 order-2 order-1 order-lg-1">
+              <div className="policy-thumb text-center">
+                <Image
+                  className="moving-vertical"
+                  src={solution}
+                  alt="policy banner"
+                  width={541} // Adjust as needed
+                  height={541} // Adjust as needed
+                />
+              </div>
+            </div>
+            <div className="col-lg-6 offset-lg-1 order-2 order-lg-2">
+              <div className="row">
+                <div className="col-12">
+                  <div className="section-title  ml-lg-0">
+                    <h2 className="h1 title">Services that we provide</h2>
+                    <p className="p-0 text-lg-left">
+                      labore dolore magnam aliquam quaerat voluptatem ad minima
+                      veniam, quis nostrum exercitationem
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="policy-wrapper-02">
+                <div className="row mtn-10 no-gutters">
+                  {/* Repeat for each service-policy-item */}
+                  <div className="col-md-6">
+                    <div className="service-policy-item mt-10">
+                      <div className="service-policy-icon">
+                        <Image src={icon1} alt="icon" width={50} height={50} />
+                      </div>
+                      <h3 className="service-policy-title">Creative Ideas</h3>
+                      <p className="service-policy-desc">
+                        Ideas es to obtain pain of itself, because it is pain,
+                        but because occasionally...
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="service-policy-item mt-10">
+                      <div className="service-policy-icon">
+                        <Image src={icon2} alt="icon" width={50} height={50} />
+                      </div>
+                      <h3 className="service-policy-title">Creative Ideas</h3>
+                      <p className="service-policy-desc">
+                        Ideas es to obtain pain of itself, because it is pain,
+                        but because occasionally...
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="service-policy-item mt-10">
+                      <div className="service-policy-icon">
+                        <Image src={icon3} alt="icon" width={50} height={50} />
+                      </div>
+                      <h3 className="service-policy-title">Creative Ideas</h3>
+                      <p className="service-policy-desc">
+                        Ideas es to obtain pain of itself, because it is pain,
+                        but because occasionally...
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="service-policy-item mt-10">
+                      <div className="service-policy-icon">
+                        <Image src={icon4} alt="icon" width={50} height={50} />
+                      </div>
+                      <h3 className="service-policy-title">Creative Ideas</h3>
+                      <p className="service-policy-desc">
+                        Ideas es to obtain pain of itself, because it is pain,
+                        but because occasionally...
+                      </p>
+                    </div>
+                  </div>
+                  {/* Repeat similar blocks for other service-policy-items */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="blog-area section-padding pb-0 fix wow fadeInUp"
+        data-wow-duration="1s"
+        data-wow-delay=".5s"
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <div className="section-title text-center">
+                <h2 className="h1 title">Latest Post from Blog</h2>
+                <p>
+                  labore dolore magnam aliquam quaerat voluptatem ad minima
+                  veniam, quis nostrum exercitationem
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="row mtn-30">
+            <div className="col-md-4">
+              <div className="blog-item mt-30">
+                <div className="blog-thumb">
+                  <a href="blog-details.html">
+                    <Image
+                      src={solution}
+                      alt="policy banner"
+                      width={370} // Adjust as needed
+                      height={250} // Adjust as needed
+                    />
+                  </a>
+                </div>
+                <div className="blog-content">
+                  <h3 className="blog-title">
+                    <a href="blog-details.html">Themoment neceary</a>
+                  </h3>
+                  <p>
+                    Ideas es to obtain pain of itself, because it is pain, but
+                    because occasionallyght ocean he Internet tend to a chunks
+                    as necessary with some of themoment
+                  </p>
+                  <div className="blog-meta">
+                    <a href="#">25 October, 2019</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="blog-item mt-30">
+                <div className="blog-thumb">
+                  <a href="blog-details.html">
+                    <Image
+                      src={solution}
+                      alt="policy banner"
+                      width={370} // Adjust as needed
+                      height={250} // Adjust as needed
+                    />
+                  </a>
+                </div>
+                <div className="blog-content">
+                  <h3 className="blog-title">
+                    <a href="blog-details.html">Beneficial strategies</a>
+                  </h3>
+                  <p>
+                    Ideas es to obtain pain of itself, because it is pain, but
+                    because occasionallyght ocean he Internet tend to a chunks
+                    as necessary with some of themoment
+                  </p>
+                  <div className="blog-meta">
+                    <a href="#">25 October, 2019</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="blog-item mt-30">
+                <div className="blog-thumb">
+                  <a href="blog-details.html">
+                    <Image
+                      src={solution}
+                      alt="policy banner"
+                      width={370} // Adjust as needed
+                      height={250} // Adjust as needed
+                    />
+                  </a>
+                </div>
+                <div className="blog-content">
+                  <h3 className="blog-title">
+                    <a href="blog-details.html">Because occasional</a>
+                  </h3>
+                  <p>
+                    Ideas es to obtain pain of itself, because it is pain, but
+                    because occasionallyght ocean he Internet tend to a chunks
+                    as necessary with some of themoment
+                  </p>
+                  <div className="blog-meta">
+                    <a href="#">25 October, 2019</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Home;
