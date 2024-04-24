@@ -1,7 +1,9 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import type { Metadata } from "next";
-// import "./(home)/globals.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "swiper/css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const metadata: Metadata = {
@@ -18,11 +20,9 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body>
-        <div className="m-auto flex min-h-screen max-w-[100vw] flex-col justify-between">
-          <Header />
-          {children}
-          {/* <Footer /> */}
-        </div>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

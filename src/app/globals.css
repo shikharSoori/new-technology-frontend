@@ -1229,7 +1229,7 @@ textarea:focus {
 }
 
 .title span {
-  color: #1c47c1;
+  color: #bf202f;
 }
 
 .subtitle {
@@ -1384,7 +1384,7 @@ textarea:focus {
 }
 
 .counterup-item span {
-  color: #1c47c1;
+  color: #bf202f;
   font-weight: 800;
   margin-top: -4px;
 }
@@ -1415,73 +1415,6 @@ textarea:focus {
 
 /*------ counter up end ------*/
 /*----- slick arrow style start -----*/
-.testimonial-carousel-active.slick-arrow-style button.slick-arrow,
-.hero-slider-active.slick-arrow-style button.slick-arrow {
-  width: 16px;
-  height: 18px;
-  bottom: -38px;
-  left: 0;
-  cursor: pointer;
-  position: absolute;
-  background-repeat: no-repeat;
-}
-
-.testimonial-carousel-active.slick-arrow-style button.slick-arrow.slick-prev,
-.hero-slider-active.slick-arrow-style button.slick-arrow.slick-prev {
-  /* background-image: url(../img/icon/arrow-prev.png); */
-}
-
-.testimonial-carousel-active.slick-arrow-style button.slick-arrow.slick-next,
-.hero-slider-active.slick-arrow-style button.slick-arrow.slick-next {
-  left: 25px;
-  /* background-image: url(../img/icon/arrow-next.png); */
-}
-
-.testimonial-carousel-active.slick-arrow-style
-  button.slick-arrow:hover.slick-prev,
-.hero-slider-active.slick-arrow-style button.slick-arrow:hover.slick-prev {
-  /* background-image: url(../img/icon/arrow-prev-color.png); */
-}
-
-.testimonial-carousel-active.slick-arrow-style
-  button.slick-arrow:hover.slick-next,
-.hero-slider-active.slick-arrow-style button.slick-arrow:hover.slick-next {
-  /* background-image: url(../img/icon/arrow-next-color.png); */
-}
-
-.testimonial-carousel-active.slick-arrow-style--testimonial_2,
-.hero-slider-active.slick-arrow-style--testimonial_2 {
-  margin-top: 35px;
-}
-
-.testimonial-carousel-active.slick-arrow-style--testimonial_2
-  button.slick-arrow,
-.hero-slider-active.slick-arrow-style--testimonial_2 button.slick-arrow {
-  right: 0;
-  left: auto;
-  bottom: 60px;
-  z-index: 1;
-}
-
-.testimonial-carousel-active.slick-arrow-style--testimonial_2
-  button.slick-arrow.slick-prev,
-.hero-slider-active.slick-arrow-style--testimonial_2
-  button.slick-arrow.slick-prev {
-  right: 60px;
-}
-
-.testimonial-carousel-active.slick-arrow-style--testimonial_2
-  button.slick-arrow.slick-next,
-.hero-slider-active.slick-arrow-style--testimonial_2
-  button.slick-arrow.slick-next {
-  right: 37px;
-  left: auto;
-}
-
-.testimonial-carousel-active.slick-arrow-style--testimonial_2 .slick-list,
-.hero-slider-active.slick-arrow-style--testimonial_2 .slick-list {
-  margin: -30px;
-}
 
 @media only screen and (min-width: 768px) and (max-width: 991.98px),
   only screen and (max-width: 767.98px) {
@@ -1797,7 +1730,7 @@ textarea:focus {
 }
 
 .hero-transparent-bg {
-  height: 890px;
+  height: 970px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
@@ -1888,7 +1821,7 @@ textarea:focus {
 }
 
 .about-inner--style_2 .subtitle span {
-  color: #1c47c1;
+  color: #bf202f;
   font-weight: 800;
 }
 
@@ -2170,7 +2103,7 @@ textarea:focus {
 }
 
 .testimonial-content .client-name {
-  color: #1c47c1;
+  color: #bf202f;
   line-height: 1;
   font-weight: 500;
   padding-bottom: 4px;
@@ -2213,11 +2146,20 @@ textarea:focus {
     margin-bottom: 68px;
   }
 }
+.slick-active .testimonial-item--style_2 {
+  padding: 30px;
+}
+.testimonial-item--style_2 {
+  padding: 30px;
+}
 
-.testimonial-item--style_2 .testimonial-content {
+.slick-active .testimonial-item--style_2 .testimonial-content {
   padding: 40px 20px 48px 45px;
   -webkit-box-shadow: 0px 0px 31.5px 3.5px rgba(28, 71, 193, 0.11);
   box-shadow: 0px 0px 31.5px 3.5px rgba(28, 71, 193, 0.11);
+}
+.testimonial-item--style_2 .testimonial-content {
+  padding: 40px 20px 48px 45px;
 }
 
 .testimonial-item--style_2 .testimonial-content p {
@@ -3561,9 +3503,9 @@ textarea:focus {
 .useful-link li a:before {
   top: 50%;
   left: 0;
-  content: "\f101";
+  /* content: "\f101"; */
   position: absolute;
-  font-family: "FontAwesome";
+  /* font-family: "FontAwesome"; */
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -3608,7 +3550,7 @@ textarea:focus {
 }
 
 .newsletter-inner .btn {
-  background-color: #1c47c1;
+  background-color: #bf202f;
 }
 
 .newsletter-inner .btn:hover {

@@ -79,7 +79,7 @@ const Header = () => {
 
           {/* Main Menu Section */}
           <div
-            className={`main-menu-wrapper sticky header-transparent ${
+            className={`main-menu-wrapper sticky ${pathName === "/" ? "header-transparent":""} ${
               isSticky ? "is-sticky" : ""
             }`}
           >

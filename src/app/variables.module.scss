@@ -14,7 +14,7 @@ $ash-color: #d2d2d2;
 
 //== Brand Color
 $theme-color: #0172d0;
-$theme-color-2: #1c47c1;
+$theme-color-2: #bf202f;
 $theme-color-dark: darken($theme-color, 15%);
 $theme-color-light: lighten($theme-color, 15%);
 $bdr-color: #e1e1e1;
@@ -65,5 +65,5 @@ $xxs-device: "only screen and (max-width: 479.98px)";
   smDevice: $sm-device;
   headingFont: $heading-font;
   themeColor: $theme-color;
-  paragraph:$paragraph
+  paragraph: $paragraph;
 }
