@@ -6,6 +6,7 @@ import "../../app/globals.css";
 import Logo from "@/assets/logo.png";
 import { usePathname } from "next/navigation";
 import "./header.scss";
+import { MdCompress } from "react-icons/md";
 
 const Header = () => {
   const pathName = usePathname();
@@ -79,9 +80,9 @@ const Header = () => {
 
           {/* Main Menu Section */}
           <div
-            className={`main-menu-wrapper sticky ${pathName === "/" ? "header-transparent":""} ${
-              isSticky ? "is-sticky" : ""
-            }`}
+            className={`main-menu-wrapper sticky ${
+              pathName === "/" ? "header-transparent" : ""
+            } ${isSticky ? "is-sticky" : ""}`}
           >
             <div className="container">
               <div className="row align-items-center">
@@ -132,19 +133,19 @@ const Header = () => {
                             </li>
                           </ul>
                         </li>
-                        <li>
+                        <li
+                          className={`link ${
+                            pathName === "/team" ? "active" : ""
+                          }`}
+                        >
                           <Link href="/team">Team</Link>
-                          <ul className="dropdown">
-                            <li>
-                              <Link href="/team">Team</Link>
-                            </li>
-                            <li>
-                              <Link href="/team-2">Team Style 02</Link>
-                            </li>
-                            <li>
-                              <Link href="/team-details">Team Details</Link>
-                            </li>
-                          </ul>
+                        </li>
+                        <li
+                          className={`link ${
+                            pathName === "/contact" ? "active" : ""
+                          }`}
+                        >
+                          <Link href="/contact">Contact</Link>
                         </li>
                         {/* Add more menu items as needed */}
                       </ul>
@@ -168,7 +169,13 @@ const Header = () => {
                 <div className="mobile-main-header">
                   <div className="mobile-logo">
                     <Link href="/">
-                      <span>Your Brand</span>
+                      <Image
+                        src={Logo}
+                        height={40}
+                        width={140}
+                        alt="logo"
+                        className="object-contain"
+                      />
                     </Link>
                   </div>
                   <div className="mobile-menu-toggler">
@@ -191,7 +198,7 @@ const Header = () => {
           <div className="off-canvas-overlay" onClick={closeOffCanvas}></div>
           <div className="off-canvas-inner-content">
             <div className="btn-close-off-canvas" onClick={closeOffCanvas}>
-              <i className="fa fa-close"></i>
+              <MdCompress />
             </div>
 
             <div className="off-canvas-inner">

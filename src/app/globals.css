@@ -22,7 +22,7 @@ body {
   line-height: 1.7;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Sarabun", sans-serif;
+  font-family: "Sarabun";
 }
 
 a {
@@ -51,9 +51,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Sarabun", sans-serif;
+  font-family: "Sarabun";
   color: #151515;
-  font-weight: 600;
+  /* font-weight: 20; */
   line-height: 1.2;
   margin: 0;
 }
@@ -443,7 +443,10 @@ textarea:focus {
     margin-top: 0 !important;
   }
 }
-
+header {
+  position: relative;
+  z-index: 100;
+}
 /*------- short classes end -------*/
 /*------- header top style start -------*/
 .header-top {
@@ -539,7 +542,7 @@ textarea:focus {
   padding: 10px 22px;
   font-weight: 500;
   display: block;
-  font-family: "Sarabun", sans-serif;
+  font-family: "Sarabun";
 }
 
 .main-menu ul li a i {
@@ -1147,7 +1150,7 @@ textarea:focus {
   color: #fff;
   line-height: 1;
   border-radius: 0;
-  font-family: "Sarabun", sans-serif;
+  font-family: "Sarabun";
   background-color: #bf202f;
   border-radius: 50px;
   font-weight: 500;
@@ -1216,7 +1219,7 @@ textarea:focus {
 }
 
 .title {
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   margin-top: -9px;
 }
@@ -2244,6 +2247,12 @@ textarea:focus {
 
 /*----- breadcrumb style css end -----*/
 /*------ team area style  start ------*/
+
+.team-slider {
+  .slick-list {
+    padding-top: 100px;
+  }
+}
 .team-member {
   position: relative;
   text-align: center;
@@ -3068,7 +3077,7 @@ textarea:focus {
 .comment-section ul li .comment-body h5 {
   font-size: 14px;
   padding-bottom: 5px;
-  font-family: "Sarabun", sans-serif;
+  font-family: "Sarabun";
 }
 
 .comment-section ul li .comment-body .comment-post-date {

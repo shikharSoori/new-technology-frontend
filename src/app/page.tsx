@@ -6,8 +6,31 @@ import Counter from "@/components/Counter/Counter";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import WhySoori from "@/components/WhySoori/WhySoori";
 import Partners from "@/components/Partners/Partners";
+import { useEffect, useState } from "react";
+import { MdKeyboardArrowUp } from "react-icons/md";
 
 const Home = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 600) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  console.log(isVisible);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       <HomeHero />
@@ -16,6 +39,14 @@ const Home = () => {
       <Testimonials />
       <WhySoori />
       <Partners />
+      <div
+        className={`scroll-top d-flex justify-content-center align-items-center  ${
+          isVisible ? "" : "not-visible"
+        }`}
+        onClick={scrollToTop}
+      >
+        <MdKeyboardArrowUp size={36} color="white" />
+      </div>
     </>
   );
 };

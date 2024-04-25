@@ -13,7 +13,7 @@ import icon4 from "../../assets/icon-4.png";
 const About = () => {
   return (
     <>
-      <AboutHero />
+      <AboutHero title="About Us" />
       <section className="about-wrapper-area section-padding">
         <div className="container">
           <div className="row align-items-center">
@@ -137,8 +137,7 @@ const About = () => {
             <div className="col-lg-3 col-md-6">
               <div className="service-policy-item mt-30">
                 <div className="service-policy-icon">
-                <Image src={icon1} alt="icon" width={50} height={50} />
-
+                  <Image src={icon1} alt="icon" width={50} height={50} />
                 </div>
                 <h3 className="service-policy-title">Creative Ideas</h3>
                 <p className="service-policy-desc">
@@ -150,8 +149,7 @@ const About = () => {
             <div className="col-lg-3 col-md-6">
               <div className="service-policy-item mt-30">
                 <div className="service-policy-icon">
-                <Image src={icon2} alt="icon" width={50} height={50} />
-
+                  <Image src={icon2} alt="icon" width={50} height={50} />
                 </div>
                 <h3 className="service-policy-title">Low Cost</h3>
                 <p className="service-policy-desc">
@@ -163,8 +161,7 @@ const About = () => {
             <div className="col-lg-3 col-md-6">
               <div className="service-policy-item mt-30">
                 <div className="service-policy-icon">
-                <Image src={icon3} alt="icon" width={50} height={50} />
-
+                  <Image src={icon3} alt="icon" width={50} height={50} />
                 </div>
                 <h3 className="service-policy-title">Talented Team</h3>
                 <p className="service-policy-desc">
@@ -176,8 +173,7 @@ const About = () => {
             <div className="col-lg-3 col-md-6">
               <div className="service-policy-item mt-30">
                 <div className="service-policy-icon">
-                <Image src={icon4} alt="icon" width={50} height={50} />
-
+                  <Image src={icon4} alt="icon" width={50} height={50} />
                 </div>
                 <h3 className="service-policy-title">Online Support</h3>
                 <p className="service-policy-desc">
