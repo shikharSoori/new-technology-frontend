@@ -43,6 +43,9 @@
 
 // header social link
 .header-social-link {
+  height: 16px;
+
+  // height: max-content;
   a {
     color: var(white);
     margin-left: 26px;
@@ -278,7 +281,6 @@
     }
   }
 }
-
 
 /*------ sticky menu style end ------*/
 

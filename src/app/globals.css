@@ -494,6 +494,8 @@ header {
 .header-social-link a {
   color: #fff;
   margin-left: 26px;
+  height: 16px !important;
+  display: flex;
 }
 
 .header-social-link a:hover {
@@ -2237,6 +2239,7 @@ header {
   line-height: 1;
   font-weight: 800;
   margin-bottom: 20px;
+  text-transform: capitalize;
 }
 
 @media only screen and (max-width: 575.98px) {

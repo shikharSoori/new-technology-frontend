@@ -7,6 +7,7 @@ import Logo from "@/assets/logo.png";
 import { usePathname } from "next/navigation";
 import "./header.scss";
 import { MdCompress } from "react-icons/md";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Header = () => {
   const pathName = usePathname();
@@ -52,25 +53,19 @@ const Header = () => {
                 </div>
                 <div className="col-sm-8">
                   <div className="header-settings-bar d-flex justify-content-end">
-                    <div className="header-social-link">
-                      <a href="#">
-                        <i className="fa fa-facebook"></i>
-                      </a>
-                      <a href="#">
-                        <i className="fa fa-twitter"></i>
-                      </a>
-                      <a href="#">
-                        <i className="fa fa-instagram"></i>
-                      </a>
-                      <a href="#">
-                        <i className="fa fa-linkedin"></i>
-                      </a>
-                    </div>
-                    <div className="language pl-30">
-                      <i className="fa fa-angle-down"></i>
-                      <ul className="dropdown-list">
-                        {/* Additional languages could be added here */}
-                      </ul>
+                    <div className="header-social-link d-flex">
+                      <Link href="#">
+                        <FaFacebook size={16} />
+                      </Link>
+                      <Link href="#">
+                        <FaTwitter size={16} />
+                      </Link>
+                      <Link href="#">
+                        <FaInstagram size={16} />
+                      </Link>
+                      <Link href="#">
+                        <FaLinkedin size={16} />
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -117,19 +112,19 @@ const Header = () => {
                           <Link href="/about">About us</Link>
                         </li>
                         <li>
-                          <Link href="/service">Products</Link>
+                          <Link href="/products">Products</Link>
                           <ul className="dropdown">
                             <li>
-                              <Link href="/service">Wacom</Link>
+                              <Link href="/products/wacom">Wacom</Link>
                             </li>
                             <li>
-                              <Link href="/service-details">HID</Link>
+                              <Link href="/products/hid">HID</Link>
                             </li>
                             <li>
-                              <Link href="/service-details">Logitech</Link>
+                              <Link href="/products/logitech">Logitech</Link>
                             </li>
                             <li>
-                              <Link href="/service-details">Zebra</Link>
+                              <Link href="/products/zebra">Zebra</Link>
                             </li>
                           </ul>
                         </li>

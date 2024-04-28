@@ -1,7 +1,8 @@
 import { url } from "inspector";
 import React from "react";
 import "../../app/about/about.scss";
-const AboutHero = ({ title }: any) => {
+import Link from "next/link";
+const AboutHero = ({ title, subTitle }: any) => {
   return (
     <div className="breadcrumb-area bg-img about-us">
       <div className="container">
@@ -12,11 +13,20 @@ const AboutHero = ({ title }: any) => {
                 <h2 className="breadcrumb-title">{title}</h2>
                 <ul className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <a href="index.html">Home</a>
+                    <Link href="/">Home</Link>
                   </li>
                   <li className="breadcrumb-item active" aria-current="page">
-                    {title}
+                    {!subTitle ? (
+                      title
+                    ) : (
+                      <Link href={`/${title}`}>{title}</Link>
+                    )}
                   </li>
+                  {subTitle && (
+                    <li className="breadcrumb-item active" aria-current="page">
+                      {subTitle}
+                    </li>
+                  )}
                 </ul>
               </nav>
             </div>
