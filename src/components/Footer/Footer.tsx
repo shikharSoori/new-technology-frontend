@@ -13,9 +13,9 @@ const Footer = () => {
             <div className="col-lg-4 col-md-6">
               <div className="footer-single-widget mt-40">
                 <div className="widget-logo">
-                  <a href="index.html">
+                  <Link href="/">
                     <Image src={logo} height={100} width={200} alt="logo" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="widget-body">
                   <p className="desc">
@@ -46,104 +46,107 @@ const Footer = () => {
                 <div className="widget-body">
                   <ul className="useful-link">
                     <li>
-                      <a
-                        href="index.html"
+                      <Link
+                        href="/"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
                         Home
-                      </a>
+                      </Link>
                     </li>
+
                     <li>
-                      <a
-                        href="index.html"
+                      <Link
+                        href="products/wacom"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
-                        Support
-                      </a>
+                        Wacom
+                      </Link>
                     </li>
+
                     <li>
-                      <a
-                        href="index.html"
+                      <Link
+                        href="/products"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
-                        About us
-                      </a>
+                        Products
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="index.html"
+                      <Link
+                        href="/products/logitech"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
-                        Conditions
-                      </a>
+                        Logitech
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="index.html"
+                      <Link
+                        href="/team"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
-                        Services
-                      </a>
+                        Team
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="index.html"
+                      <Link
+                        href="products/zebra"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
-                        Login
-                      </a>
+                        Zebra
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="index.html"
+                      <Link
+                        href="/about"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
-                        Blog Post
-                      </a>
+                        About Us
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="index.html"
+                      <Link
+                        href="/products/hid"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
-                        Register
-                      </a>
+                        HID
+                      </Link>
                     </li>
+
                     <li>
-                      <a
-                        href="index.html"
+                      <Link
+                        href="/blog"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
-                        Pages
-                      </a>
+                        Blog
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="index.html"
+                      <Link
+                        href="/contact"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
-                        Contact us
-                      </a>
+                        Contact Us
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -189,11 +192,9 @@ const Footer = () => {
             <p>
               &copy; 2021 <b>Soori Technology</b> Developed By{" "}
               <i className="fa fa-heart text-danger"></i> by{" "}
-              <a href="https://hasthemes.com/">
-                <b>
-                  Soori Solutions
-                </b>
-              </a>
+              <Link href="https://hasthemes.com/">
+                <b>Soori Solutions</b>
+              </Link>
             </p>
           </div>
         </div>

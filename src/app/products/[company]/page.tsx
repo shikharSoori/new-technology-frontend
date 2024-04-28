@@ -1,5 +1,6 @@
 // export default function Page({ params }: { params: { slug: string } }) {}
 
+import Brands from "@/components/Brands/Brands";
 import AboutHero from "@/components/Hero/AboutHero";
 import Link from "next/link";
 
@@ -31,7 +32,7 @@ const Page = ({ params }: props) => {
                 </form>
               </div> */}
 
-              <div className="blog-widget mt-40">
+              {/* <div className="blog-widget mt-40">
                 <h4 className="blog-widget-title">Brands</h4>
                 <ul className="blog-categories">
                   <li>
@@ -48,7 +49,8 @@ const Page = ({ params }: props) => {
                     <span>(40)</span>
                   </li>
                 </ul>
-              </div>
+              </div> */}
+              <Brands />
 
               {/* <div className="blog-widget mt-40">
                 <h4 className="blog-widget-title">Tags</h4>

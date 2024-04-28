@@ -1,3 +1,4 @@
+import Brands from "@/components/Brands/Brands";
 import Link from "next/link";
 
 interface props {
@@ -9,142 +10,12 @@ const Page = ({ params }: props) => {
   console.log(params);
   return (
     <div>
-      My product: {params?.productDetail}
+      {/* My product: {params?.productDetail} */}
       <section className="blog-area section-padding">
         <div className="container">
           <div className="row mtn-40">
-            <div className="col-lg-3 order-2 order-lg-1 blog-widget-wrapper">
-              {/* <div className="blog-widget mt-40">
-                <h4 className="blog-widget-title">Search</h4>
-                <form className="widget-search-form">
-                  <input
-                    placeholder="Search keyword"
-                    type="text"
-                    className="search-field"
-                  />
-                  <button type="submit" className="search-btn">
-                    <i className="fa fa-search"></i>
-                  </button>
-                </form>
-              </div> */}
-
-              <div className="blog-widget mt-40">
-                <h4 className="blog-widget-title">Brands</h4>
-                <ul className="blog-categories">
-                  <li>
-                    <Link href="/products/zebra">Zebra</Link>
-
-                    <span>(20)</span>
-                  </li>
-                  <li>
-                    <Link href="/products/logitech">Logitech</Link>{" "}
-                    <span>(18)</span>
-                  </li>
-                  <li>
-                    <Link href="/company">Mocquito Control</Link>
-                    <span>(40)</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* <div className="blog-widget mt-40">
-                <h4 className="blog-widget-title">Recent Posts</h4>
-                <ul className="recent-posts-inner">
-                  <li className="recent-posts">
-                    <div className="recent-posts-image">
-                      <a href="blog-details.html">
-                        <img
-                          src="assets/img/blog/recent-01.jpg"
-                          alt="post thumb"
-                        />
-                      </a>
-                    </div>
-                    <div className="recent-posts-body">
-                      <span className="recent-posts-meta">
-                        February 13, 2018
-                      </span>
-                      <h6 className="recent-posts-title">
-                        <a href="blog-details.html">
-                          Diffrent title gose This is demo
-                        </a>
-                      </h6>
-                    </div>
-                  </li>
-                  <li className="recent-posts">
-                    <div className="recent-posts-image">
-                      <a href="blog-details.html">
-                        <img
-                          src="assets/img/blog/recent-02.jpg"
-                          alt="post thumb"
-                        />
-                      </a>
-                    </div>
-                    <div className="recent-posts-body">
-                      <span className="recent-posts-meta">
-                        February 13, 2018
-                      </span>
-                      <h6 className="recent-posts-title">
-                        <a href="blog-details.html">
-                          Diffrent title gose This is demo
-                        </a>
-                      </h6>
-                    </div>
-                  </li>
-                  <li className="recent-posts">
-                    <div className="recent-posts-image">
-                      <a href="blog-details.html">
-                        <img
-                          src="assets/img/blog/recent-03.jpg"
-                          alt="post thumb"
-                        />
-                      </a>
-                    </div>
-                    <div className="recent-posts-body">
-                      <span className="recent-posts-meta">
-                        February 13, 2018
-                      </span>
-                      <h6 className="recent-posts-title">
-                        <a href="blog-details.html">
-                          Diffrent title gose This is demo
-                        </a>
-                      </h6>
-                    </div>
-                  </li>
-                  <li className="recent-posts">
-                    <div className="recent-posts-image">
-                      <a href="blog-details.html">
-                        <img
-                          src="assets/img/blog/recent-04.jpg"
-                          alt="post thumb"
-                        />
-                      </a>
-                    </div>
-                    <div className="recent-posts-body">
-                      <span className="recent-posts-meta">
-                        February 13, 2018
-                      </span>
-                      <h6 className="recent-posts-title">
-                        <a href="blog-details.html">
-                          Diffrent title gose This is demo
-                        </a>
-                      </h6>
-                    </div>
-                  </li>
-                </ul>
-              </div> */}
-
-              {/* <div className="blog-widget mt-40">
-                <h4 className="blog-widget-title">Tags</h4>
-                <div className="blog-tag">
-                  <a href="blog-details.html">Insect</a>
-                  <a href="blog-details.html">Control</a>
-                  <a href="blog-details.html">Bugs</a>
-                  <a href="blog-details.html">Prevention</a>
-                  <a href="blog-details.html">Support</a>
-                </div>
-              </div> */}
-            </div>
-            <div className="col-lg-9 order-1 order-lg-2 pl-lg-45">
+          
+            <div className="col-lg-12 order-1 order-lg-2 pl-lg-45">
               <div className="blog-item mt-40">
                 <div className="blog-thumb">
                   <a href="blog-details.html">

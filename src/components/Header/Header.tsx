@@ -130,6 +130,13 @@ const Header = () => {
                         </li>
                         <li
                           className={`link ${
+                            pathName === "/blog" ? "active" : ""
+                          }`}
+                        >
+                          <Link href="/blog">Blog</Link>
+                        </li>
+                        <li
+                          className={`link ${
                             pathName === "/team" ? "active" : ""
                           }`}
                         >

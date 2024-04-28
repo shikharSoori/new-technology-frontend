@@ -2966,6 +2966,9 @@ header {
 .blog-categories li a {
   color: #151515;
 }
+.blog-categories li a.active {
+  color: #bf202f;
+}
 
 .blog-categories li span {
   float: right;
