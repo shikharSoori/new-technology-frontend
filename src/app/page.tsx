@@ -9,7 +9,7 @@ import Partners from "@/components/Partners/Partners";
 import { useEffect, useState } from "react";
 import { MdKeyboardArrowUp } from "react-icons/md";
 
-const Home = () => {
+const Home =  () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
@@ -20,7 +20,6 @@ const Home = () => {
     }
   };
 
-  console.log(isVisible);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -31,6 +30,9 @@ const Home = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  // const data = await getData("product-app/brand");
+  // console.log(data?.results);
   return (
     <>
       <HomeHero />

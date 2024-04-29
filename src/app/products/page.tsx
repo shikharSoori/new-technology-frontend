@@ -1,3 +1,5 @@
+
+import Brands from "@/components/Brands/Brands";
 import AboutHero from "@/components/Hero/AboutHero";
 import Link from "next/link";
 import React from "react";
@@ -24,24 +26,7 @@ const Products = () => {
                 </form>
               </div> */}
 
-              <div className="blog-widget mt-40">
-                <h4 className="blog-widget-title">Brands</h4>
-                <ul className="blog-categories">
-                  <li>
-                    <Link href="/products/zebra">Zebra</Link>
-
-                    <span>(20)</span>
-                  </li>
-                  <li>
-                    <Link href="/products/logitech">Logitech</Link>{" "}
-                    <span>(18)</span>
-                  </li>
-                  <li>
-                    <Link href="/company">Mocquito Control</Link>
-                    <span>(40)</span>
-                  </li>
-                </ul>
-              </div>
+              <Brands />
 
               {/* <div className="blog-widget mt-40">
                 <h4 className="blog-widget-title">Tags</h4>

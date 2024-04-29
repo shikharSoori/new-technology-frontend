@@ -1,11 +1,13 @@
 "use client";
+import { getData } from "@/app/lib/getData";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const Brands = () => {
-  const pathName = usePathname();
-  //   console.log(pathName, "dfjk");
+const Brands = async () => {
+  // const pathName = usePathname();
+  const data = await getData("product-app/brand");
+  console.log(data, "dd");
 
   return (
     <div className="blog-widget mt-40">
@@ -14,7 +16,7 @@ const Brands = () => {
         <li>
           <Link
             href="/products/zebra"
-            className={` ${pathName === "/products/zebra" ? "active" : ""}`}
+            // className={` ${pathName === "/products/zebra" ? "active" : ""}`}
           >
             Zebra
           </Link>
