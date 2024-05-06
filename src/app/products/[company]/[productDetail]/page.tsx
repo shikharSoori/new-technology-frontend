@@ -1,6 +1,7 @@
 import { getData } from "@/app/lib/getData";
 import Brands from "@/components/Brands/Brands";
 import AboutHero from "@/components/Hero/AboutHero";
+import { reFormatName } from "@/utils/FormatName";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,12 +12,8 @@ interface props {
   };
 }
 const Page = async ({ params }: props) => {
-  const reFormatProductName = (name: any) => {
-    return name
-      .replace(/\_/g, " ") // Replace all spaces with underscores
-      .replace(/\-/g, "/"); // Replace all slashes with dashes
-  };
-  const productName = reFormatProductName(params.productDetail);
+ 
+  const productName = reFormatName(params.productDetail);
 
   const productData = await getData("product-app/product?limit=0&offset=0");
   const products = productData.results;
@@ -27,7 +24,10 @@ const Page = async ({ params }: props) => {
 
   return (
     <div>
-      <AboutHero title={"products"} subTitle={ reFormatProductName(params.productDetail)} />
+      <AboutHero
+        title={"products"}
+        subTitle={reFormatName(params.productDetail)}
+      />
 
       <section className="blog-area 31697 section-padding">
         <div className="container">

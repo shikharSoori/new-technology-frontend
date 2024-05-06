@@ -3,6 +3,7 @@
 import { getData } from "@/app/lib/getData";
 import Brands from "@/components/Brands/Brands";
 import AboutHero from "@/components/Hero/AboutHero";
+import { formatName } from "@/utils/FormatName";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,11 +23,7 @@ const Page = async ({ params }: props) => {
     `product-app/product?ordering=-id&brand_id=${matchedBrand.id}&offset=0&limit=0`
   );
   const brandProducts = data.results;
-  const formatProductName = (name: any) => {
-    return name
-      .replace(/\s/g, "_") // Replace all spaces with underscores
-      .replace(/\//g, "-"); // Replace all slashes with dashes
-  };
+
   return (
     <>
       {/* My Post: {params?.company} */}
@@ -45,9 +42,9 @@ const Page = async ({ params }: props) => {
                       <div className="blog-item mt-40">
                         <div className="blog-thumb">
                           <Link
-                            href={`/products/${
-                              params.company
-                            }/${formatProductName(product.productName)}`}
+                            href={`/products/${params.company}/${formatName(
+                              product.productName
+                            )}`}
                           >
                             {/* <img
                          src="assets/img/blog/blog-1.jpg"
@@ -68,9 +65,9 @@ const Page = async ({ params }: props) => {
                         <div className="blog-content">
                           <h3 className="blog-title">
                             <Link
-                              href={`/products/${
-                                params.company
-                              }/${formatProductName(product.productName)}`}
+                              href={`/products/${params.company}/${formatName(
+                                product.productName
+                              )}`}
                             >
                               {product.productName}
                             </Link>

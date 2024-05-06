@@ -22,7 +22,7 @@ body {
   line-height: 1.7;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Sarabun";
+  font-family: var(---font-sarabun);
 }
 
 a {
@@ -51,7 +51,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Sarabun";
+  font-family: var(---font-sarabun);
   color: #151515;
   /* font-weight: 20; */
   line-height: 1.2;
@@ -544,7 +544,7 @@ header {
   padding: 10px 22px;
   font-weight: 500;
   display: block;
-  font-family: "Sarabun";
+  font-family: var(---font-sarabun);
 }
 
 .main-menu ul li a i {
@@ -1152,7 +1152,7 @@ header {
   color: #fff;
   line-height: 1;
   border-radius: 0;
-  font-family: "Sarabun";
+  font-family: var(---font-sarabun);
   background-color: #bf202f;
   border-radius: 50px;
   font-weight: 500;
@@ -2797,8 +2797,11 @@ header {
   height: 100%;
   width: auto;
 }
+.blog-item {
+  display: flex;
+  flex-direction: column;
+}
 .blog-item .blog-thumb img {
-
   height: 100%;
   width: auto;
 }
@@ -3096,7 +3099,7 @@ header {
 .comment-section ul li .comment-body h5 {
   font-size: 14px;
   padding-bottom: 5px;
-  font-family: "Sarabun";
+  font-family: var(---font-sarabun);
 }
 
 .comment-section ul li .comment-body .comment-post-date {

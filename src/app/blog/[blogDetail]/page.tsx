@@ -1,5 +1,6 @@
 import { getData } from "@/app/lib/getData";
 import AboutHero from "@/components/Hero/AboutHero";
+import { reFormatName } from "@/utils/FormatName";
 import Image from "next/image";
 import React from "react";
 
@@ -9,23 +10,16 @@ interface props {
   };
 }
 const BlogDetail = async ({ params }: props) => {
-  const reFormatProductName = (name: any) => {
-    return name
-      .replace(/\_/g, " ") // Replace all spaces with underscores
-      .replace(/\-/g, "/"); // Replace all slashes with dashes
-  };
+
   const blogData = await getData("blog-app/blog?limit=0&offset=0");
   const blogs = blogData.results;
-  const blogName = reFormatProductName(params.blogDetail);
+  const blogName = reFormatName(params.blogDetail);
 
   const matchedBrand = blogs.find((blog: any) => blog.name === blogName);
 
   return (
     <>
-      <AboutHero
-        title="blogs"
-        subTitle={reFormatProductName(params?.blogDetail)}
-      />{" "}
+      <AboutHero title="blogs" subTitle={reFormatName(params?.blogDetail)} />{" "}
       <section className="blog-area section-padding">
         <div className="container">
           <div className="row mtn-40">

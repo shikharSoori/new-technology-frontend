@@ -4,17 +4,14 @@ import Link from "next/link";
 import React from "react";
 import { getData } from "../lib/getData";
 import Image from "next/image";
+import { formatName } from "@/utils/FormatName";
 
 const Products = async () => {
   const data = await getData("product-app/product?limit=0&offset=0");
   const products = data?.results;
   const brandData = await getData("product-app/brand");
   const brands = brandData.results;
-  const formatProductName = (name: any) => {
-    return name
-      .replace(/\s/g, "_") // Replace all spaces with underscores
-      .replace(/\//g, "-"); // Replace all slashes with dashes
-  };
+
   return (
     <>
       <AboutHero title="Products" />
@@ -62,7 +59,7 @@ const Products = async () => {
                       <div className="blog-item mt-40">
                         <div className="blog-thumb">
                           <Link
-                            href={`/products/${matchedBrand.brand.toLowerCase()}/${formatProductName(
+                            href={`/products/${matchedBrand.brand.toLowerCase()}/${formatName(
                               product.productName
                             )}`}
                           >
@@ -77,7 +74,7 @@ const Products = async () => {
                         <div className="blog-content">
                           <h3 className="blog-title">
                             <Link
-                              href={`/products/${matchedBrand.brand.toLowerCase()}/${formatProductName(
+                              href={`/products/${matchedBrand.brand.toLowerCase()}/${formatName(
                                 product.productName
                               )}`}
                             >

@@ -9,14 +9,14 @@ interface props {
   };
 }
 const ServicesDetail = async ({ params }: props) => {
-  const reFormatProductName = (name: any) => {
+  const reFormatName = (name: any) => {
     return name
       .replace(/\_/g, " ") // Replace all spaces with underscores
       .replace(/\-/g, "/"); // Replace all slashes with dashes
   };
   const serviceData = await getData("solution-app/solution?limit=0&offset=0");
   const services = serviceData.results;
-  const serviceName = reFormatProductName(params.servicesDetail);
+  const serviceName = reFormatName(params.servicesDetail);
 
   const matchedServie = services.find(
     (service: any) => service.name === serviceName
