@@ -8,14 +8,8 @@ import Link from "next/link";
 const HomeHero = async () => {
   const data = await getData(`core-app/banner-images`);
   const heroContent = data.results;
-  console.log(heroContent);
-  function SampleNextArrow() {
-    return <button type="button" className="slick-next"></button>;
-  }
 
-  function SamplePrevArrow() {
-    return <button type="button" className="slick-prev"></button>;
-  }
+
   var settings = {
     dots: false,
     arrows: false,

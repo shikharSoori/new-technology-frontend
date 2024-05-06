@@ -1,11 +1,11 @@
-"use client";
-
 import Image from "next/image";
 import React from "react";
-import Slider from "react-slick";
+import Slider from "@/components/Carousel/Carousel";
 import solution from "../../assets/Solution.png";
 
-const Testimonials = () => {
+import { getData } from "@/app/lib/getData";
+
+const Testimonials = async () => {
   var testimonialSlider = {
     dots: false,
     slidesToShow: 1,
@@ -16,6 +16,9 @@ const Testimonials = () => {
     autoplay: true,
     autoplaySpeed: 2000,
   };
+  const data = await getData(`about-us-app/ceo-message`);
+  const testimonials = data.results;
+
   return (
     <section className="testimonial-wrapper testimonial-wrapper--style_2 gray-bg section-padding fix">
       <div className="container">
@@ -34,32 +37,22 @@ const Testimonials = () => {
               </h3>
 
               <Slider {...testimonialSlider}>
-                <div className="testimonial-item testimonial-item--style_2 ">
-                  <div className="testimonial-content">
-                    <p>
-                      <i className="fa fa-quote-left"></i>labore et dolore
-                      magnam aliquam quaerat voluptatem. ad minima veniam, quis
-                      nostrum exercitationem ullam uscipit laboriosam, nisi ex
-                      ea commodi consequatur{" "}
-                      <i className="fa fa-quote-right"></i>
-                    </p>
-                    <h5 className="client-name">Roberto Carlox</h5>
-                    <h6 className="client-desig">CEO, Selorex</h6>
-                  </div>
-                </div>
-                <div className="testimonial-item testimonial-item--style_2">
-                  <div className="testimonial-content">
-                    <p>
-                      <i className="fa fa-quote-left"></i>labore et dolore
-                      magnam aliquam quaerat voluptatem. ad minima veniam, quis
-                      nostrum exercitationem ullam uscipit laboriosam, nisi ex
-                      ea commodi consequatur{" "}
-                      <i className="fa fa-quote-right"></i>
-                    </p>
-                    <h5 className="client-name">Roberto Carlox</h5>
-                    <h6 className="client-desig">CEO, Selorex</h6>
-                  </div>
-                </div>
+                {testimonials?.map((testimonial: any) => {
+                  return (
+                    <div
+                      key={testimonial.id}
+                      className="testimonial-item testimonial-item--style_2 "
+                    >
+                      <div className="testimonial-content">
+                        <p>{testimonial.description}</p>
+                        <h5 className="client-name">{testimonial.name}</h5>
+                        <h6 className="client-desig">
+                          {testimonial.designation},{testimonial.companyName}
+                        </h6>
+                      </div>
+                    </div>
+                  );
+                })}
               </Slider>
             </div>
           </div>
