@@ -1,7 +1,9 @@
 // export default function Page({ params }: { params: { slug: string } }) {}
 
+import { getData } from "@/app/lib/getData";
 import Brands from "@/components/Brands/Brands";
 import AboutHero from "@/components/Hero/AboutHero";
+import Image from "next/image";
 import Link from "next/link";
 
 interface props {
@@ -9,7 +11,22 @@ interface props {
     company: string;
   };
 }
-const Page = ({ params }: props) => {
+const Page = async ({ params }: props) => {
+  const brandData = await getData("product-app/brand");
+  const brands = brandData.results;
+  const brandName = params.company;
+  const matchedBrand = brands.find(
+    (brand: any) => brand.brand.toLowerCase() === brandName
+  );
+  const data = await getData(
+    `product-app/product?ordering=-id&brand_id=${matchedBrand.id}&offset=0&limit=0`
+  );
+  const brandProducts = data.results;
+  const formatProductName = (name: any) => {
+    return name
+      .replace(/\s/g, "_") // Replace all spaces with underscores
+      .replace(/\//g, "-"); // Replace all slashes with dashes
+  };
   return (
     <>
       {/* My Post: {params?.company} */}
@@ -18,77 +35,56 @@ const Page = ({ params }: props) => {
         <div className="container">
           <div className="row mtn-40">
             <div className="col-lg-3 order-2 order-lg-1 blog-widget-wrapper">
-              {/* <div className="blog-widget mt-40">
-                <h4 className="blog-widget-title">Search</h4>
-                <form className="widget-search-form">
-                  <input
-                    placeholder="Search keyword"
-                    type="text"
-                    className="search-field"
-                  />
-                  <button type="submit" className="search-btn">
-                    <i className="fa fa-search"></i>
-                  </button>
-                </form>
-              </div> */}
-
-              {/* <div className="blog-widget mt-40">
-                <h4 className="blog-widget-title">Brands</h4>
-                <ul className="blog-categories">
-                  <li>
-                    <Link href="/products/zebra">Zebra</Link>
-
-                    <span>(20)</span>
-                  </li>
-                  <li>
-                    <Link href="/products/logitech">Logitech</Link>{" "}
-                    <span>(18)</span>
-                  </li>
-                  <li>
-                    <Link href="/company">Mocquito Control</Link>
-                    <span>(40)</span>
-                  </li>
-                </ul>
-              </div> */}
               <Brands />
-
-              {/* <div className="blog-widget mt-40">
-                <h4 className="blog-widget-title">Tags</h4>
-                <div className="blog-tag">
-                  <a href="blog-details.html">Insect</a>
-                  <a href="blog-details.html">Control</a>
-                  <a href="blog-details.html">Bugs</a>
-                  <a href="blog-details.html">Prevention</a>
-                  <a href="blog-details.html">Support</a>
-                </div>
-              </div> */}
             </div>
             <div className="col-lg-9 order-1 order-lg-2 pl-lg-45 ">
               <div className="row">
-                <div className="col-md-6">
-                  <div className="blog-item mt-40">
-                    <div className="blog-thumb">
-                      <a href="blog-details.html">
-                        <img
-                          src="assets/img/blog/blog-1.jpg"
-                          alt="blog thumb"
-                        />
-                      </a>
+                {brandProducts?.map((product: any) => {
+                  return (
+                    <div key={product?.id} className="col-md-6">
+                      <div className="blog-item mt-40">
+                        <div className="blog-thumb">
+                          <Link
+                            href={`/products/${
+                              params.company
+                            }/${formatProductName(product.productName)}`}
+                          >
+                            {/* <img
+                         src="assets/img/blog/blog-1.jpg"
+                         alt="blog thumb"
+                       /> */}
+                            <Image
+                              src={product.image}
+                              width={370}
+                              // fill={true}
+                              layout="responsive"
+                              height={250}
+                              alt="blog-img"
+                              // objectFit="contain"
+                              // object-fit: "cover"
+                            />
+                          </Link>
+                        </div>
+                        <div className="blog-content">
+                          <h3 className="blog-title">
+                            <Link
+                              href={`/products/${
+                                params.company
+                              }/${formatProductName(product.productName)}`}
+                            >
+                              {product.productName}
+                            </Link>
+                          </h3>
+                          <p>
+                            Ideas es to obtain pain of itself, because it is
+                            pain, but because occasionallyght ocean he Internet
+                            tend to a chunks as necessary with some of themoment
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="blog-content">
-                      <h3 className="blog-title">
-                        <Link href="/products/zebra/benificaialproduct">
-                          Beneficial strategies
-                        </Link>
-                      </h3>
-                      <p>
-                        Ideas es to obtain pain of itself, because it is pain,
-                        but because occasionallyght ocean he Internet tend to a
-                        chunks as necessary with some of themoment
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
 
                 {/* <div className="col-12">
                   <div className="paginatoin-area text-center mt-40">

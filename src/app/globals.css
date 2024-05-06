@@ -1879,6 +1879,10 @@ header {
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
+  height: 100%;
+}
+.policy-wrapper-02 .service-policy-item:hover .know-more {
+  color: #bf202f;
 }
 
 .policy-wrapper-02 .service-policy-item:hover,
@@ -2790,12 +2794,21 @@ header {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+  height: 100%;
+  width: auto;
+}
+.blog-item .blog-thumb img {
+
+  height: 100%;
+  width: auto;
 }
 
 .blog-thumb {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   background-color: #f5f6f7;
   overflow: hidden;
+  height: 250px;
 }
 
 .blog-thumb a {

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
@@ -30,7 +32,7 @@ const Testimonials = () => {
               <h3 className="subtitle">
                 Create some exclusive way to solve our customer problems
               </h3>
-              
+
               <Slider {...testimonialSlider}>
                 <div className="testimonial-item testimonial-item--style_2 ">
                   <div className="testimonial-content">

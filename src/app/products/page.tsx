@@ -1,10 +1,20 @@
-
 import Brands from "@/components/Brands/Brands";
 import AboutHero from "@/components/Hero/AboutHero";
 import Link from "next/link";
 import React from "react";
+import { getData } from "../lib/getData";
+import Image from "next/image";
 
-const Products = () => {
+const Products = async () => {
+  const data = await getData("product-app/product?limit=0&offset=0");
+  const products = data?.results;
+  const brandData = await getData("product-app/brand");
+  const brands = brandData.results;
+  const formatProductName = (name: any) => {
+    return name
+      .replace(/\s/g, "_") // Replace all spaces with underscores
+      .replace(/\//g, "-"); // Replace all slashes with dashes
+  };
   return (
     <>
       <AboutHero title="Products" />
@@ -41,30 +51,50 @@ const Products = () => {
             </div>
             <div className="col-lg-9 order-1 order-lg-2 pl-lg-45 ">
               <div className="row">
-                <div className="col-md-6">
-                  <div className="blog-item mt-40">
-                    <div className="blog-thumb">
-                      <a href="blog-details.html">
-                        <img
-                          src="assets/img/blog/blog-1.jpg"
-                          alt="blog thumb"
-                        />
-                      </a>
+                {products?.map((product: any) => {
+                  const brandId = product.brand;
+                  const matchedBrand = brands.find(
+                    (brand: any) => brand.id === brandId
+                  );
+
+                  return (
+                    <div key={product?.id} className="col-md-6">
+                      <div className="blog-item mt-40">
+                        <div className="blog-thumb">
+                          <Link
+                            href={`/products/${matchedBrand.brand.toLowerCase()}/${formatProductName(
+                              product.productName
+                            )}`}
+                          >
+                            <Image
+                              src={product.image}
+                              width={370}
+                              height={250}
+                              alt="blog-img"
+                            />
+                          </Link>
+                        </div>
+                        <div className="blog-content">
+                          <h3 className="blog-title">
+                            <Link
+                              href={`/products/${matchedBrand.brand.toLowerCase()}/${formatProductName(
+                                product.productName
+                              )}`}
+                            >
+                              {product.productName}
+                            </Link>
+                          </h3>
+                          <p>
+                            Ideas es to obtain pain of itself, because it is
+                            pain, but because occasionally ocean the Internet
+                            tend to be chunks as necessary with some of
+                            themoment.
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="blog-content">
-                      <h3 className="blog-title">
-                        <Link href="products/zebra/benificaialproduct">
-                          Beneficial strategies
-                        </Link>
-                      </h3>
-                      <p>
-                        Ideas es to obtain pain of itself, because it is pain,
-                        but because occasionallyght ocean he Internet tend to a
-                        chunks as necessary with some of themoment
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
 
                 {/* <div className="col-12">
                   <div className="paginatoin-area text-center mt-40">

@@ -1,34 +1,54 @@
-"use client";
-import { getData } from "@/app/lib/getData";
+// "use client";
+import { fetchData, getData } from "@/app/lib/getData";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const Brands = async () => {
-  // const pathName = usePathname();
+export const productCount =  async(brandId: number) => {
+  const data = await getData(
+    `product-app/product?ordering=-id&brand_id=${brandId}`
+  );
+  const productCounts = data?.count;
+  return productCounts;
+};
+
+const Brands = async() => {
   const data = await getData("product-app/brand");
-  console.log(data, "dd");
+  // const [brands, setBrand] = useState([]);
+  // const pathName = usePathname();
+  const brands = data?.results;
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`
+  //       );
+  //       const jsonData = await response.json();
+  //       setBrand(jsonData.results);
+  //       // console.log(jsonData, "brand");
+  //     } catch (error) {
+  //       console.error("Failed to fetch data:", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="blog-widget mt-40">
       <h4 className="blog-widget-title">Brands</h4>
       <ul className="blog-categories">
-        <li>
-          <Link
-            href="/products/zebra"
-            // className={` ${pathName === "/products/zebra" ? "active" : ""}`}
-          >
-            Zebra
-          </Link>
-          <span>(20)</span>
-        </li>
-        <li>
-          <Link href="/products/logitech">Logitech</Link> <span>(18)</span>
-        </li>
-        <li>
-          <Link href="/company">Mocquito Control</Link>
-          <span>(40)</span>
-        </li>
+        {brands?.map((brand: any) => (
+          <li key={brand?.id}>
+            <Link
+              href={`/products/${brand.brand.toLowerCase()}`}
+              // className={` ${pathName === "/products/zebra" ? "active" : ""}`}
+            >
+              {brand.brand}
+            </Link>
+            <span>({productCount(brand?.id)})</span>
+          </li>
+        ))}
       </ul>
     </div>
   );

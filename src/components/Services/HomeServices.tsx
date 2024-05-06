@@ -5,7 +5,13 @@ import icon1 from "../../assets/icon-1.png";
 import icon2 from "../../assets/icon-2.png";
 import icon3 from "../../assets/icon-3.png";
 import icon4 from "../../assets/icon-4.png";
-const HomeServices = () => {
+import { getData } from "@/app/lib/getData";
+import SingleServices from "./Services";
+const HomeServices = async () => {
+  const data = await getData(`solution-app/solution`);
+  const services = data.results;
+  // const [expandedCardIndices, setExpandedCardIndices] = useState([]);
+
   return (
     <section className="policy-area-02 section-padding fix">
       <div className="container">
@@ -36,54 +42,33 @@ const HomeServices = () => {
             <div className="policy-wrapper-02">
               <div className="row mtn-10 no-gutters">
                 {/* Repeat for each service-policy-item */}
-                <div className="col-md-6">
-                  <div className="service-policy-item mt-10">
-                    <div className="service-policy-icon">
-                      <Image src={icon1} alt="icon" width={50} height={50} />
+                {services?.map((service: any, index: any) => {
+                  return (
+                    <div key={service.id} className="col-md-6">
+                      {/* <div className="service-policy-item mt-10">
+                        <div className="service-policy-icon">
+                          <Image
+                            src={service.image}
+                            alt="icon"
+                            width={50}
+                            height={50}
+                          />
+                        </div>
+                        <h3 className="service-policy-title">{service.name}</h3>
+                        <p className="service-policy-desc">
+                          {service.description}
+                        </p>
+                      </div> */}
+                      <SingleServices
+                        index={index}
+                        image={service.logo}
+                        name={service.name}
+                        description={service.description}
+                      />
                     </div>
-                    <h3 className="service-policy-title">Creative Ideas</h3>
-                    <p className="service-policy-desc">
-                      Ideas es to obtain pain of itself, because it is pain, but
-                      because occasionally...
-                    </p>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="service-policy-item mt-10">
-                    <div className="service-policy-icon">
-                      <Image src={icon2} alt="icon" width={50} height={50} />
-                    </div>
-                    <h3 className="service-policy-title">Creative Ideas</h3>
-                    <p className="service-policy-desc">
-                      Ideas es to obtain pain of itself, because it is pain, but
-                      because occasionally...
-                    </p>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="service-policy-item mt-10">
-                    <div className="service-policy-icon">
-                      <Image src={icon3} alt="icon" width={50} height={50} />
-                    </div>
-                    <h3 className="service-policy-title">Creative Ideas</h3>
-                    <p className="service-policy-desc">
-                      Ideas es to obtain pain of itself, because it is pain, but
-                      because occasionally...
-                    </p>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="service-policy-item mt-10">
-                    <div className="service-policy-icon">
-                      <Image src={icon4} alt="icon" width={50} height={50} />
-                    </div>
-                    <h3 className="service-policy-title">Creative Ideas</h3>
-                    <p className="service-policy-desc">
-                      Ideas es to obtain pain of itself, because it is pain, but
-                      because occasionally...
-                    </p>
-                  </div>
-                </div>
+                  );
+                })}
+
                 {/* Repeat similar blocks for other service-policy-items */}
               </div>
             </div>

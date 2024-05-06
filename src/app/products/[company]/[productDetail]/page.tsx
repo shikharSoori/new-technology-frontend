@@ -1,34 +1,55 @@
+import { getData } from "@/app/lib/getData";
 import Brands from "@/components/Brands/Brands";
+import AboutHero from "@/components/Hero/AboutHero";
+import Image from "next/image";
 import Link from "next/link";
 
 interface props {
   params: {
+    company: string;
     productDetail: string;
   };
 }
-const Page = ({ params }: props) => {
-  console.log(params);
+const Page = async ({ params }: props) => {
+  const reFormatProductName = (name: any) => {
+    return name
+      .replace(/\_/g, " ") // Replace all spaces with underscores
+      .replace(/\-/g, "/"); // Replace all slashes with dashes
+  };
+  const productName = reFormatProductName(params.productDetail);
+
+  const productData = await getData("product-app/product?limit=0&offset=0");
+  const products = productData.results;
+  const matchedProduct = products.find(
+    (product: any) => product.productName === productName
+  );
+  const data = await getData(`product-app/product/${matchedProduct?.id}`);
+
   return (
     <div>
-      {/* My product: {params?.productDetail} */}
-      <section className="blog-area section-padding">
+      <AboutHero title={"products"} subTitle={ reFormatProductName(params.productDetail)} />
+
+      <section className="blog-area 31697 section-padding">
         <div className="container">
           <div className="row mtn-40">
-          
             <div className="col-lg-12 order-1 order-lg-2 pl-lg-45">
               <div className="blog-item mt-40">
                 <div className="blog-thumb">
                   <a href="blog-details.html">
-                    <img
-                      src="assets/img/blog/blog-details-2.jpg"
-                      alt="blog thumb"
+                    <Image
+                      src={matchedProduct.image}
+                      width={870}
+                      // fill={true}
+                      // layout="responsive"
+                      height={500}
+                      alt="blog-img"
+                      // objectFit="contain"
+                      // object-fit: "cover"
                     />
                   </a>
                 </div>
                 <div className="blog-content blog-details">
-                  <h3 className="blog-title">
-                    Beneficial strategies tempora culpa possimus assumenda
-                  </h3>
+                  <h3 className="blog-title">{matchedProduct.productName}</h3>
                   {/* <div className="blog-meta">
                     <a href="#">25 October, 2019</a>
                   </div> */}

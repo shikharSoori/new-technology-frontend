@@ -1,10 +1,38 @@
+"use client";
 import Link from "next/link";
 
 import Image from "next/image";
 import logo from "../../assets/logo.png";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { FormEvent, useRef, useState } from "react";
 
 const Footer = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsLoading(true);
+    try {
+      const formData = new FormData(event.currentTarget);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/contact-app/contact`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const data = await response.json();
+      if (formRef.current) {
+        formRef.current.reset();
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
   return (
     <footer>
       <div className="footer-widget-area gray-bg section-padding pb-125">
@@ -168,8 +196,13 @@ const Footer = () => {
                     </b>
                   </p>
                   <div className="newsletter-inner">
-                    <form id="mc-form">
-                      {/* <input type="email" className="news-field" id="mc-email" autocomplete="off" placeholder="Enter your email here"> */}
+                    <form id="mc-form" onSubmit={onSubmit} ref={formRef}>
+                      <input
+                        type="email"
+                        className="news-field"
+                        id="mc-email"
+                        placeholder="Enter your email here"
+                      />
                       <button className="btn btn-all" id="mc-submit">
                         Subscribe
                       </button>

@@ -1,3 +1,4 @@
+"use server";
 export const getData = async (url: string) => {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`);
   if (!response.ok) {
@@ -8,3 +9,29 @@ export const getData = async (url: string) => {
   return data;
 };
 
+// export const productCount = async (brandId: number) => {
+//   const data = await getData(
+//     `product-app/product?ordering=-id&brand_id=${brandId}`
+//   );
+//   const productCounts = data?.count;
+//   return productCounts;
+// };
+
+export const fetchData = async (setBrands: any) => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`
+    );
+    const jsonData = await response.json();
+    setBrands(jsonData.results);
+
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+  }
+};
+
+export const fetchWhySoori = async () => {
+  const data = await getData(`product-app/whySoori`);
+  const whySoori = data?.count;
+  return whySoori;
+};

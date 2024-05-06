@@ -65,42 +65,14 @@ const About = () => {
               data-wow-delay=".5s"
             >
               <div className="row team-member-inner mtn-40">
-                <div className="col-xl-auto col-sm-3 flex-grow-1">
-                  <div className="team-member mt-40 active">
-                    <div className="team-member-info">
-                      <h5 className="team-member-name">Roberto Sonax</h5>
-                      <h6 className="team-member-desig">Chief Executive</h6>
-                    </div>
-                    <img src="assets/img/team/team-1.png" alt="team member" />
-                  </div>
-                </div>
-                <div className="col-xl-auto col-sm-3 flex-grow-1">
-                  <div className="team-member mt-40">
-                    <div className="team-member-info">
-                      <h5 className="team-member-name">Roberto Sonax</h5>
-                      <h6 className="team-member-desig">Chief Executive</h6>
-                    </div>
-                    <img src="assets/img/team/team-2.png" alt="team member" />
-                  </div>
-                </div>
-                <div className="col-xl-auto col-sm-3 flex-grow-1">
-                  <div className="team-member mt-40">
-                    <div className="team-member-info">
-                      <h5 className="team-member-name">Roberto Sonax</h5>
-                      <h6 className="team-member-desig">Chief Executive</h6>
-                    </div>
-                    <img src="assets/img/team/team-3.png" alt="team member" />
-                  </div>
-                </div>
-                <div className="col-xl-auto col-sm-3 flex-grow-1">
-                  <div className="team-member mt-40">
-                    <div className="team-member-info">
-                      <h5 className="team-member-name">Roberto Sonax</h5>
-                      <h6 className="team-member-desig">Chief Executive</h6>
-                    </div>
-                    <img src="assets/img/team/team-1.png" alt="team member" />
-                  </div>
-                </div>
+                <Image
+                  className="moving-vertical"
+                  src={solution}
+                  alt="policy banner"
+                  width={583} // Adjust as needed
+                  height={634} // Adjust as needed
+                />
+                {/* team */}
               </div>
             </div>
             <div
