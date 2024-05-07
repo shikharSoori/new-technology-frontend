@@ -33,15 +33,14 @@ const WhySoori = async () => {
         <div className="row mtn-30">
           {whyReason?.map((why: any) => {
             return (
-              <>
+              <React.Fragment key={why.id}>
                 <div className="col-md-4">
                   <div className="blog-item mt-30">
                     <div className="blog-thumb">
-                      <a >
+                      <a>
                         <Image
                           src={why.image}
                           alt="policy banner"
-                          
                           height={250} // Adjust as needed
                           width={370} // Adjust as needed
                         />
@@ -49,13 +48,13 @@ const WhySoori = async () => {
                     </div>
                     <div className="blog-content">
                       <h3 className="blog-title">
-                        <a >{why.title}</a>
+                        <a>{why.title}</a>
                       </h3>
                       <p>{why.description}</p>
                     </div>
                   </div>
                 </div>
-              </>
+              </React.Fragment>
             );
           })}
         </div>

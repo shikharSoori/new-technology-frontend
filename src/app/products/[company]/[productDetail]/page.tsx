@@ -12,15 +12,12 @@ interface props {
   };
 }
 const Page = async ({ params }: props) => {
- 
   const productName = reFormatName(params.productDetail);
-
   const productData = await getData("product-app/product?limit=0&offset=0");
   const products = productData.results;
   const matchedProduct = products.find(
     (product: any) => product.productName === productName
   );
-  const data = await getData(`product-app/product/${matchedProduct?.id}`);
 
   return (
     <div>
@@ -35,41 +32,23 @@ const Page = async ({ params }: props) => {
             <div className="col-lg-12 order-1 order-lg-2 pl-lg-45">
               <div className="blog-item mt-40">
                 <div className="blog-thumb">
-                  <a href="blog-details.html">
-                    <Image
-                      src={matchedProduct.image}
-                      width={870}
-                      // fill={true}
-                      // layout="responsive"
-                      height={500}
-                      alt="blog-img"
-                      // objectFit="contain"
-                      // object-fit: "cover"
-                    />
-                  </a>
+                  <Image
+                    src={matchedProduct.image}
+                    width={870}
+                    height={500}
+                    alt="blog-img"
+                  />
                 </div>
                 <div className="blog-content blog-details">
                   <h3 className="blog-title">{matchedProduct.productName}</h3>
-                  {/* <div className="blog-meta">
-                    <a href="#">25 October, 2019</a>
-                  </div> */}
+
                   <p>
-                    {" "}
                     Bigger ipsum dolor sit amet consectetur adipisicing elit.
                     Voluptate perferendis consequuntur illo aliquid nihil ad
                     neque, debitis praesentium libero ullam asperiores
                     exercitationem deserunt inventore facilis, officiis,
                   </p>
-                  {/* <blockquote>
-                    <p>
-                      Quisque semper nunc vitae erat pellentesque, ac placerat
-                      arcu consectetur. venenatis elit ac ultrices convallis.
-                      Duis est nisi, tincidunt ac urna sed, cursus blandit
-                      lectus. In ullamcorper sit amet ligula ut eleifend. Proin
-                      dictum tempor ligula, ac feugiat metus. Sed finibus tortor
-                      eu scelerisque scelerisque.
-                    </p>
-                  </blockquote> */}
+
                   <p>
                     aliquam maiores asperiores recusandae commodi blanditiis
                     ipsum tempora culpa possimus assumenda ab quidem a

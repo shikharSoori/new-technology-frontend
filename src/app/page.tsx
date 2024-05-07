@@ -7,7 +7,6 @@ import Partners from "@/components/Partners/Partners";
 import Scroller from "@/components/Scroller/Scroller";
 
 const Home = () => {
-
   return (
     <>
       <HomeHero />
