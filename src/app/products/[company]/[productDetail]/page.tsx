@@ -66,124 +66,6 @@ const Page = async ({ params }: props) => {
                   </p>
                 </div>
               </div>
-
-              {/* <div className="comment-section section-padding">
-                <h4>03 Comment</h4>
-                <ul>
-                  <li>
-                    <div className="author-avatar">
-                      <img src="assets/img/blog/comment-icon.png" alt="" />
-                    </div>
-                    <div className="comment-body">
-                      <span className="reply-btn">
-                        <a href="#">Reply</a>
-                      </span>
-                      <h5 className="comment-author">Erik Jhonson</h5>
-                      <div className="comment-post-date">
-                        15 Dec, 2019 at 9:15pm
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Enim maiores adipisci optio ex, non pariatur itaque illo
-                        sunt?
-                      </p>
-                    </div>
-                  </li>
-                  <li className="comment-children">
-                    <div className="author-avatar">
-                      <img src="assets/img/blog/comment-icon.png" alt="" />
-                    </div>
-                    <div className="comment-body">
-                      <span className="reply-btn">
-                        <a href="#">Reply</a>
-                      </span>
-                      <h5 className="comment-author">Pitter Looks</h5>
-                      <div className="comment-post-date">
-                        20 Nov, 2019 at 9:30am
-                      </div>
-                      <p>
-                        pariatur itaque Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Enim maiores adipisci optio ex,
-                        laboriosam facilis non illo sunt?
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="author-avatar">
-                      <img src="assets/img/blog/comment-icon.png" alt="" />
-                    </div>
-                    <div className="comment-body">
-                      <span className="reply-btn">
-                        <a href="#">Reply</a>
-                      </span>
-                      <h5 className="comment-author">Dominic Palma</h5>
-                      <div className="comment-post-date">
-                        25 Jan, 2019 at 8:50pm
-                      </div>
-                      <p>
-                        Enim maiores Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. adipisci optio ex, laboriosam facilis
-                        non pariatur itaque illo sunt?
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div> */}
-
-              {/* <div className="blog-comment-wrapper">
-                <h4>Leave A Reply</h4>
-                <p>
-                  Email address will not be published. Required fields are
-                  marked *
-                </p>
-                <form action="#">
-                  <div className="comment-post-box">
-                    <div className="row">
-                      <div className="col-12">
-                        <label>Comment</label>
-                        <textarea
-                          name="commnet"
-                          placeholder="Write a comment"
-                        ></textarea>
-                      </div>
-                      <div className="col-md-4">
-                        <label>Name</label>
-                        <input
-                          type="text"
-                          className="coment-field"
-                          placeholder="Name"
-                        />
-                      </div>
-                      <div className="col-md-4">
-                        <label>Email</label>
-                        <input
-                          type="text"
-                          className="coment-field"
-                          placeholder="Email"
-                        />
-                      </div>
-                      <div className="col-md-4">
-                        <label>Website</label>
-                        <input
-                          type="text"
-                          className="coment-field"
-                          placeholder="Website"
-                        />
-                      </div>
-                      <div className="col-12">
-                        <div className="coment-btn">
-                          <input
-                            className="btn btn-all"
-                            type="submit"
-                            name="submit"
-                            value="Post Comment"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div> */}
             </div>
           </div>
         </div>
@@ -191,4 +73,6 @@ const Page = async ({ params }: props) => {
     </div>
   );
 };
+
+
 export default Page;
