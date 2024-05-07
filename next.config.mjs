@@ -7,6 +7,9 @@ const nextConfig = {
   images: {
     domains: ["api-website.sooritechnology.com.np", "192.168.1.73"],
   },
+  generateBuildId: async () => {
+    return process.env.NEXT_PUBLIC_API;
+  },
 };
 
 export default nextConfig;

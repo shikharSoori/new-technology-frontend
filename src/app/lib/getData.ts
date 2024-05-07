@@ -1,4 +1,3 @@
-"use server";
 export const getData = async (url: string) => {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`);
   if (!response.ok) {
@@ -24,7 +23,6 @@ export const fetchData = async (setBrands: any) => {
     );
     const jsonData = await response.json();
     setBrands(jsonData.results);
-
   } catch (error) {
     console.error("Failed to fetch data:", error);
   }
