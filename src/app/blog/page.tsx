@@ -8,8 +8,6 @@ import BlogCard from "@/components/Blog/BlogCard";
 
 const Blogs = async () => {
   const data = await getData("blog-app/blog?limit=0&offset=0");
-  // const data = await getData("product-app/product?limit=0&offset=0");
-
   const blogs = data.results;
 
   return (
@@ -18,19 +16,15 @@ const Blogs = async () => {
       <section className="blog-area section-padding">
         <div className="container">
           <div className="row mtn-40">
-            {blogs?.map((blog: any) => {
-              return (
-                <div key={blog.id} className="col-lg-4 col-md-6">
-              
-                  <BlogCard
-                    description={blog.description}
-                    createdDate={blog.createdDateBs}
-                    blogName={blog.name}
-                    blogImage={blog.image}
-                  />
+            {blogs?.length > 0 ? (
+              blogs.map((blogitem: any) => (
+                <div key={blogitem.id} className="col-lg-4 col-md-6">
+                  <BlogCard blog={blogitem} />
                 </div>
-              );
-            })}
+              ))
+            ) : (
+              <p>No blogs found</p>
+            )}
           </div>
         </div>
       </section>

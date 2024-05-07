@@ -1,6 +1,7 @@
-"use client";
+// "use client";
+import { getData } from "@/app/lib/getData";
 import React from "react";
-import CountUp from "react-countup";
+import CountUp from "@/components/CountUp/Carousel";
 
 const Count = ({ number, title, duration }: any) => {
   return (
@@ -14,7 +15,9 @@ const Count = ({ number, title, duration }: any) => {
     </div>
   );
 };
-const Counter = () => {
+const Counter = async () => {
+  const data = await getData(`solution-app/client-count`);
+  const clients = data.results;
   return (
     <section
       className="funfacts-section section-padding--ptb_90 fix wow fadeInUp"
@@ -26,8 +29,8 @@ const Counter = () => {
           <div className="col-12">
             <div className="section-title section-title--style_2 text-center">
               <h2 className="h1 title">
-                Sucessfully <span>completed</span> 2100+ <span>projects</span>{" "}
-                with numbers of satisfied client
+                Sucessfully <span>completed</span> {clients[0].totalProducts}+{" "}
+                <span>projects</span> with numbers of satisfied client
               </h2>
             </div>
           </div>
@@ -37,44 +40,44 @@ const Counter = () => {
             <div className="counterup-item mt-40">
               <Count
                 className="odometer h1"
-                duration={10}
-                number={100}
+                duration={3}
+                number={clients[0].activeClients}
                 title="+"
               />
-              <h5>Satisfied Clients</h5>
+              <h5>Active Clients</h5>
             </div>
           </div>
           <div className="col-md-3 col-sm-6">
             <div className="counterup-item mt-40">
               <Count
                 className="odometer h1"
-                duration={10}
-                number={100}
+                duration={3}
+                number={clients[0].activeMembers}
                 title="+"
               />{" "}
-              <h5>Completed Projects</h5>
+              <h5>Active Members</h5>
             </div>
           </div>
           <div className="col-md-3 col-sm-6">
             <div className="counterup-item mt-40">
               <Count
                 className="odometer h1"
-                duration={10}
-                number={100}
+                duration={3}
+                number={clients[0].activeCompanies}
                 title="+"
               />{" "}
-              <h5>Cup Coffee</h5>
+              <h5>Active Companies</h5>
             </div>
           </div>
           <div className="col-md-3 col-sm-6">
             <div className="counterup-item mt-40">
               <Count
                 className="odometer h1"
-                duration={10}
-                number={100}
-                title="+"
+                duration={3}
+                number={clients[0].totalProducts}
+                title=""
               />{" "}
-              <h5>Awards Winning</h5>
+              <h5>Products</h5>
             </div>
           </div>
         </div>

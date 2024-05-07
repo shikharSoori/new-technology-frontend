@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import "./header.scss";
 import { MdCompress } from "react-icons/md";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { RxCross2 } from "react-icons/rx";
 
 const Header = () => {
   const pathName = usePathname();
@@ -199,8 +200,11 @@ const Header = () => {
         >
           <div className="off-canvas-overlay" onClick={closeOffCanvas}></div>
           <div className="off-canvas-inner-content">
-            <div className="btn-close-off-canvas" onClick={closeOffCanvas}>
-              <MdCompress />
+            <div
+              className="btn-close-off-canvas d-flex justify-content-center align-items-center"
+              onClick={closeOffCanvas}
+            >
+              <RxCross2 />
             </div>
 
             <div className="off-canvas-inner">
@@ -219,35 +223,36 @@ const Header = () => {
                     {/* Example Menu Items */}
                     <li className="menu-item-has-children">
                       <Link href="/">Home</Link>
-                      <ul className="dropdown">
-                        <li>
-                          <Link href="/">Home version 01</Link>
-                        </li>
-                        <li>
-                          <Link href="/index-2">Home version 02</Link>
-                        </li>
-                      </ul>
                     </li>
                     <li>
                       <Link href="/about">About us</Link>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link href="/service">Services</Link>
+                      <Link href="/products">Products</Link>
                       {/* Add more menu items as needed */}
-                    </li>
-                    <li className="menu-item-has-children">
-                      <Link href="/team">Team</Link>
                       <ul className="dropdown">
                         <li>
-                          <Link href="/team">Team</Link>
+                          <Link href="/products/wacom">Wacom</Link>
                         </li>
                         <li>
-                          <Link href="/team-2">Team Style 02</Link>
+                          <Link href="/products/hid">HID</Link>
                         </li>
                         <li>
-                          <Link href="/team-details">Team Details</Link>
+                          <Link href="/products/logitech">Logitech</Link>
+                        </li>
+                        <li>
+                          <Link href="/products/zebra">Zebra</Link>
                         </li>
                       </ul>
+                    </li>
+                    <li className="">
+                      <Link href="/blog">Blog</Link>
+                    </li>
+                    <li className="">
+                      <Link href="/team">Team</Link>
+                    </li>
+                    <li className="">
+                      <Link href="/contact">Contact</Link>
                     </li>
                   </ul>
                 </nav>

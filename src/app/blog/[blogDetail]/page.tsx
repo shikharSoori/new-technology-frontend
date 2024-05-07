@@ -10,8 +10,7 @@ interface props {
   };
 }
 const BlogDetail = async ({ params }: props) => {
-
-  const blogData = await getData("blog-app/blogvgh?limit=0&offset=0");
+  const blogData = await getData("blog-app/blog?limit=0&offset=0");
   const blogs = blogData.results;
   const blogName = reFormatName(params.blogDetail);
 

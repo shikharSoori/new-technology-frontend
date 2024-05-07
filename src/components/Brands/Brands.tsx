@@ -26,7 +26,7 @@ const Brands = async() => {
   //       );
   //       const jsonData = await response.json();
   //       setBrand(jsonData.results);
-  //       // console.log(jsonData, "brand");
+  // 
   //     } catch (error) {
   //       console.error("Failed to fetch data:", error);
   //     }

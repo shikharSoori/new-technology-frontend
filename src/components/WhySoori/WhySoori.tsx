@@ -5,7 +5,6 @@ import { fetchWhySoori, getData } from "@/app/lib/getData";
 
 const WhySoori = async () => {
   const data = await getData(`product-app/why-soori`);
-
   const whyReason = data.results;
   // const data = await getData(
   //   `product-app/product?ordering=-id&brand_id=${matchedBrand.id}&offset=0&limit=0`

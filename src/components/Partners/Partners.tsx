@@ -18,7 +18,6 @@ const Partners = async () => {
   };
   const data = await getData(`product-app/our-partner`);
   const partners = data.results;
-
   return (
     <section
       className="brand-logo-wrapper section-padding fix wow fadeInUp"

@@ -28,7 +28,7 @@ const HomeServices = async () => {
             </div>
           </div>
           <div className="col-lg-6 offset-lg-1 order-2 order-lg-2 order-md-1">
-            <div className="row">
+            {/* <div className="row">
               <div className="col-12">
                 <div className="section-title  ml-lg-0">
                   <h2 className="h1 title">Services that we provide</h2>
@@ -38,13 +38,13 @@ const HomeServices = async () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="policy-wrapper-02">
               <div className="row mtn-10 no-gutters">
                 {/* Repeat for each service-policy-item */}
                 {services?.map((service: any, index: any) => {
                   return (
-                    <div key={service.id} className="col-md-6">
+                    <div key={service?.id} className="col-md-6">
                       {/* <div className="service-policy-item mt-10">
                         <div className="service-policy-icon">
                           <Image
@@ -61,9 +61,9 @@ const HomeServices = async () => {
                       </div> */}
                       <SingleServices
                         index={index}
-                        image={service.logo}
-                        name={service.name}
-                        description={service.description}
+                        image={service?.logo}
+                        name={service?.name}
+                        description={service?.description}
                       />
                     </div>
                   );

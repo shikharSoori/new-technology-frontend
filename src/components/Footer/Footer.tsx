@@ -1,38 +1,30 @@
-"use client";
+// "use client";
 import Link from "next/link";
 
 import Image from "next/image";
 import logo from "../../assets/logo.png";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import { FormEvent, useRef, useState } from "react";
+import { getData } from "@/app/lib/getData";
+import Slider from "@/components/Carousel/Carousel";
+import BlogCard from "../Blog/BlogCard";
+import { formatName } from "@/utils/FormatName";
+import React from "react";
 
-const Footer = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const formRef = useRef<HTMLFormElement>(null);
+const Footer = async () => {
+  const data = await getData(`blog-app/blog?limit=3`);
+  const blogs = data.results;
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setIsLoading(true);
-    try {
-      const formData = new FormData(event.currentTarget);
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/contact-app/contact`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+  var brandSlider = {
+    dots: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: false,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 500,
+  };
+  const maxLength = 100;
 
-      const data = await response.json();
-      if (formRef.current) {
-        formRef.current.reset();
-      }
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsLoading(false);
-    }
-  }
   return (
     <footer>
       <div className="footer-widget-area gray-bg section-padding pb-125">
@@ -183,8 +175,8 @@ const Footer = () => {
 
             <div className="col-lg-4 col-md-6">
               <div className="footer-single-widget mt-40">
-                <h3 className="widget-title">Newsletter</h3>
-                <div className="widget-body news-subtitle">
+                <h3 className="widget-title">Blogs</h3>
+                {/* <div className="widget-body news-subtitle">
                   <p className="desc">
                     Subscribe our Newsletter because occasionallyght ocean he
                     and he can make some of noise to us
@@ -213,7 +205,55 @@ const Footer = () => {
                       <div className="mailchimp-error"></div>
                     </div>
                   </div>
-                </div>
+                </div> */}
+                {/* <div className="blog-item mt-40">
+                  <div className="blog-thumb">
+                    <Link href={`/blog/${formatName(blogName)}`}>
+                      <Image
+                        height={250}
+                        src={blogImage}
+                        alt={"hello"}
+                        width={370}
+                      />
+                    </Link>
+                  </div>
+                  <div className="blog-content">
+                    <h3 className="blog-title">
+                      <Link href={`/blog/${formatName(blogName)}`}>
+                        {blogName}
+                      </Link>
+                    </h3>
+
+                    {description.length >= maxLength
+                      ? `${description.substr(0, maxLength).trim()}...`
+                      : description}
+
+                    <div className="blog-meta">
+                      <a href="#">{createdDate}</a>
+                    </div>
+                  </div>
+                </div> */}
+                <Slider {...brandSlider}>
+                  {blogs?.map((blogitem: any) => {
+                    return (
+                      <React.Fragment key={blogitem.id}>
+                        <div className="blog-item ">
+                          <div className="blog-thumb">
+                            <Link href={`/blog/${formatName(blogitem.name)}`}>
+                              <Image
+                                height={250}
+                                src={blogitem.image}
+                                alt={"hello"}
+                                width={370}
+                              />
+                            </Link>
+                          </div>
+                    
+                        </div>
+                      </React.Fragment>
+                    );
+                  })}
+                </Slider>
               </div>
             </div>
           </div>
@@ -225,7 +265,7 @@ const Footer = () => {
             <p>
               &copy; 2021 <b>Soori Technology</b> Developed By{" "}
               <i className="fa fa-heart text-danger"></i> by{" "}
-              <Link href="https://hasthemes.com/">
+              <Link href="/">
                 <b>Soori Solutions</b>
               </Link>
             </p>
