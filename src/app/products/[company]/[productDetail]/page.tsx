@@ -39,8 +39,7 @@ export async function generateStaticParams() {
 }
 const Page = async ({ params }: props) => {
   const productName = reFormatName(params.productDetail);
-  console.log(productName);
-  console.log(params.productDetail);
+
   const productData = await getData("product-app/product?limit=0&offset=0");
   const products = productData.results;
   const matchedProduct = products.find(
@@ -62,8 +61,8 @@ const Page = async ({ params }: props) => {
                 <div className="blog-thumb">
                   <Image
                     src={matchedProduct.image}
-                    width={870}
-                    height={500}
+                    width={370}
+                    height={250}
                     alt="blog-img"
                   />
                 </div>

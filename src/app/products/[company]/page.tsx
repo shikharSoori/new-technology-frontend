@@ -61,12 +61,8 @@ const Page = async ({ params }: props) => {
                             <Image
                               src={product.image}
                               width={370}
-                              // fill={true}
-                              layout="responsive"
                               height={250}
                               alt="blog-img"
-                              // objectFit="contain"
-                              // object-fit: "cover"
                             />
                           </Link>
                         </div>
