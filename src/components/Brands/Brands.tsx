@@ -4,7 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-export const productCount =  async(brandId: number) => {
+export const revalidate = 3600;
+
+export const productCount = async (brandId: number) => {
   const data = await getData(
     `product-app/product?ordering=-id&brand_id=${brandId}`
   );
@@ -12,7 +14,7 @@ export const productCount =  async(brandId: number) => {
   return productCounts;
 };
 
-const Brands = async() => {
+const Brands = async () => {
   const data = await getData("product-app/brand");
   // const [brands, setBrand] = useState([]);
   // const pathName = usePathname();
@@ -26,7 +28,7 @@ const Brands = async() => {
   //       );
   //       const jsonData = await response.json();
   //       setBrand(jsonData.results);
-  // 
+  //
   //     } catch (error) {
   //       console.error("Failed to fetch data:", error);
   //     }

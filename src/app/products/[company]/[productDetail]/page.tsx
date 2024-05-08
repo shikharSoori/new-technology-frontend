@@ -18,13 +18,12 @@ interface props {
 // }
 
 export async function generateStaticParams() {
-  const data = await getData("product-app/product");
-  const data1 = await getData("product-app/brand");
+  const data = await getData("product-app/product?limit=0");
+  const data1 = await getData("product-app/brand?limit=0");
 
   const productData = data.results;
   const brandData = data1.results;
 
-  console.log(productData);
   const params = productData.map((product: any) => {
     const brandName = brandData?.find(
       (brand: any) => brand.id === product?.brand
@@ -34,6 +33,7 @@ export async function generateStaticParams() {
       productDetail: formatName(product?.productName),
     };
   });
+
 
   return params;
 }

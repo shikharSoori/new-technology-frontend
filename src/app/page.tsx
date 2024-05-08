@@ -5,7 +5,7 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import WhySoori from "@/components/WhySoori/WhySoori";
 import Partners from "@/components/Partners/Partners";
 import Scroller from "@/components/Scroller/Scroller";
-
+export const revalidate = 3600;
 const Home = () => {
   return (
     <>

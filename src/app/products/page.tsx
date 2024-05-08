@@ -10,7 +10,7 @@ const Products = async () => {
   const data = await getData("product-app/product?limit=0&offset=0");
   const products = data?.results;
   const brandData = await getData("product-app/brand");
-  const brands = brandData.results;
+  const brands = brandData?.results;
 
   return (
     <>
@@ -24,8 +24,8 @@ const Products = async () => {
             <div className="col-lg-9 order-1 order-lg-2 pl-lg-45 ">
               <div className="row">
                 {products?.map((product: any) => {
-                  const brandId = product.brand;
-                  const matchedBrand = brands.find(
+                  const brandId = product?.brand;
+                  const matchedBrand = brands?.find(
                     (brand: any) => brand.id === brandId
                   );
 
@@ -34,26 +34,26 @@ const Products = async () => {
                       <div className="blog-item mt-40">
                         <div className="blog-thumb">
                           <Link
-                            href={`/products/${matchedBrand.brand.toLowerCase()}/${formatName(
-                              product.productName
+                            href={`/products/${matchedBrand?.brand?.toLowerCase()}/${formatName(
+                              product?.productName
                             )}`}
                           >
                             <Image
                               src={product.image}
                               width={370}
                               height={250}
-                              alt="blog-img"
+                              alt="product-img"
                             />
                           </Link>
                         </div>
                         <div className="blog-content">
                           <h3 className="blog-title">
                             <Link
-                              href={`/products/${matchedBrand.brand.toLowerCase()}/${formatName(
-                                product.productName
+                              href={`/products/${matchedBrand?.brand?.toLowerCase()}/${formatName(
+                                product?.productName
                               )}`}
                             >
-                              {product.productName}
+                              {product?.productName}
                             </Link>
                           </h3>
                           <p>
