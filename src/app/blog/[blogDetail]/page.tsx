@@ -1,6 +1,6 @@
 import { getData } from "@/app/lib/getData";
 import AboutHero from "@/components/Hero/AboutHero";
-import { reFormatName } from "@/utils/FormatName";
+import { formatName, reFormatName } from "@/utils/FormatName";
 import Image from "next/image";
 import React from "react";
 
@@ -8,6 +8,14 @@ interface props {
   params: {
     blogDetail: string;
   };
+}
+export async function generateStaticParams() {
+  const data = await getData("blog-app/blog");
+  const blogData = data.results;
+  const params = blogData.map((blog: any) => ({
+    blogDetail: formatName(blog.name), // Assuming 'name' is the property you want to use as 'company'
+  }));
+  return params;
 }
 const BlogDetail = async ({ params }: props) => {
   const blogData = await getData("blog-app/blog?limit=0&offset=0");

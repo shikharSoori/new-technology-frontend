@@ -1,5 +1,6 @@
 import { getData } from "@/app/lib/getData";
 import AboutHero from "@/components/Hero/AboutHero";
+import { formatName } from "@/utils/FormatName";
 import Image from "next/image";
 import React from "react";
 
@@ -7,6 +8,15 @@ interface props {
   params: {
     servicesDetail: string;
   };
+}
+export async function generateStaticParams() {
+  const data = await getData("solution-app/solution");
+  const solutions = data.results;
+  const params = solutions.map((services: any) => ({
+    servicesDetail: formatName(services.name), // Assuming 'name' is the property you want to use as 'company'
+  }));
+ 
+  return params;
 }
 const ServicesDetail = async ({ params }: props) => {
   const reFormatName = (name: any) => {

@@ -16,8 +16,8 @@ const Count = ({ number, title, duration }: any) => {
   );
 };
 const Counter = async () => {
-  const data = await getData(`solution-app/client-count`);
-  const clients = data.results;
+  // const data = await getData(`solution-app/client-count`);
+  // const clients = data.results;
   return (
     <section
       className="funfacts-section section-padding--ptb_90 fix wow fadeInUp"
@@ -29,8 +29,9 @@ const Counter = async () => {
           <div className="col-12">
             <div className="section-title section-title--style_2 text-center">
               <h2 className="h1 title">
-                Sucessfully <span>completed</span> {clients[0].totalProducts}+{" "}
-                <span>projects</span> with numbers of satisfied client
+                Sucessfully <span>completed</span>
+                {/* {clients[0].totalProducts}+{" "} */}
+                100+ <span>projects</span> with numbers of satisfied client
               </h2>
             </div>
           </div>
@@ -41,7 +42,7 @@ const Counter = async () => {
               <Count
                 className="odometer h1"
                 duration={3}
-                number={clients[0].activeClients}
+                number="200"
                 title="+"
               />
               <h5>Active Clients</h5>
@@ -52,7 +53,7 @@ const Counter = async () => {
               <Count
                 className="odometer h1"
                 duration={3}
-                number={clients[0].activeMembers}
+                number="300"
                 title="+"
               />{" "}
               <h5>Active Members</h5>
@@ -63,7 +64,7 @@ const Counter = async () => {
               <Count
                 className="odometer h1"
                 duration={3}
-                number={clients[0].activeCompanies}
+                number="400"
                 title="+"
               />{" "}
               <h5>Active Companies</h5>
@@ -74,7 +75,7 @@ const Counter = async () => {
               <Count
                 className="odometer h1"
                 duration={3}
-                number={clients[0].totalProducts}
+                number="500"
                 title=""
               />{" "}
               <h5>Products</h5>

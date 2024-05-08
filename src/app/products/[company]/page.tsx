@@ -12,6 +12,14 @@ interface props {
     company: string;
   };
 }
+export async function generateStaticParams() {
+  const data = await getData("product-app/brand");
+  const brandData = data.results;
+  const params = brandData.map((brand: any) => ({
+    company: brand.brand.toLowerCase(), // Assuming 'name' is the property you want to use as 'company'
+  }));
+  return params;
+}
 const Page = async ({ params }: props) => {
   const brandData = await getData("product-app/brand");
   const brands = brandData.results;

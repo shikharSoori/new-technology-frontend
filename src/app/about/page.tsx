@@ -1,4 +1,3 @@
-"use client";
 import AboutHero from "@/components/Hero/AboutHero";
 import React from "react";
 import "./about.scss";

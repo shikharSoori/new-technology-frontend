@@ -1,18 +1,46 @@
 import { getData } from "@/app/lib/getData";
-import Brands from "@/components/Brands/Brands";
 import AboutHero from "@/components/Hero/AboutHero";
-import { reFormatName } from "@/utils/FormatName";
+import { formatName, reFormatName } from "@/utils/FormatName";
 import Image from "next/image";
-import Link from "next/link";
-
 interface props {
   params: {
     company: string;
     productDetail: string;
   };
 }
+// export function generateStaticParams() {
+//   return [
+//     { company: "a", productDetail: "1" },
+//     { company: "b", productDetail: "2" },
+//     { company: "c", productDetail: "3" },
+
+//   ];
+// }
+
+export async function generateStaticParams() {
+  const data = await getData("product-app/product");
+  const data1 = await getData("product-app/brand");
+
+  const productData = data.results;
+  const brandData = data1.results;
+
+  console.log(productData);
+  const params = productData.map((product: any) => {
+    const brandName = brandData?.find(
+      (brand: any) => brand.id === product?.brand
+    );
+    return {
+      company: brandName?.brand?.toLowerCase(),
+      productDetail: formatName(product?.productName),
+    };
+  });
+
+  return params;
+}
 const Page = async ({ params }: props) => {
   const productName = reFormatName(params.productDetail);
+  console.log(productName);
+  console.log(params.productDetail);
   const productData = await getData("product-app/product?limit=0&offset=0");
   const products = productData.results;
   const matchedProduct = products.find(
@@ -73,6 +101,5 @@ const Page = async ({ params }: props) => {
     </div>
   );
 };
-
 
 export default Page;
