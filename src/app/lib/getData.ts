@@ -1,5 +1,8 @@
 export const getData = async (url: string) => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`, {
+    method: "GET",
+    next: { revalidate: 500 },
+  });
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -19,7 +22,8 @@ export const getData = async (url: string) => {
 export const fetchData = async (setBrands: any) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`
+      `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`,
+      { method: "GET", next: { revalidate: 500 } }
     );
     const jsonData = await response.json();
     setBrands(jsonData.results);
