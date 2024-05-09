@@ -2,8 +2,7 @@ import { unstable_noStore as noStore } from "next/cache";
 export const getData = async (url: string) => {
   // noStore();
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`, {
-    method: "GET",
-    next: { revalidate: 500 },
+    cache: "no-store",
   });
   if (!response.ok) {
     throw new Error("Failed to fetch data");
@@ -26,7 +25,7 @@ export const fetchData = async (setBrands: any) => {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`,
-      { method: "GET", next: { revalidate: 500 } }
+      { cache: "no-store" }
     );
     const jsonData = await response.json();
     setBrands(jsonData.results);
