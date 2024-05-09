@@ -1,6 +1,8 @@
 import path from "path";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  distDir: "build",
   output: "export",
   sassOptions: {
     includePaths: [path.join(process.cwd(), "styles")], // Correct path for SASS/SCSS
@@ -8,9 +10,6 @@ const nextConfig = {
   images: {
     domains: ["api-website.sooritechnology.com.np", "192.168.1.73"],
     unoptimized: true,
-  },
-  generateBuildId: async () => {
-    return process.env.NEXT_PUBLIC_API;
   },
 };
 
