@@ -1,4 +1,6 @@
+import { unstable_noStore as noStore } from "next/cache";
 export const getData = async (url: string) => {
+  noStore();
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`, {
     method: "GET",
     next: { revalidate: 500 },
@@ -20,6 +22,7 @@ export const getData = async (url: string) => {
 // };
 
 export const fetchData = async (setBrands: any) => {
+  noStore();
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`,
