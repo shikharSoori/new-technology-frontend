@@ -5,7 +5,6 @@ import solution from "../../assets/Solution.png";
 import { getData } from "@/app/lib/getData";
 import Link from "next/link";
 import hero1 from "../../assets/onservice.png";
-import hero2 from "../../assets/trackline.png";
 import hero3 from "../../assets/ACCESSCONTROL.png";
 import hero4 from "../../assets/CARDPRINTER.png";
 import hero5 from "../../assets/HR.png";
@@ -45,7 +44,7 @@ const HomeHero = async () => {
       bg: false,
       id: 2,
       logo: logo2,
-      image: hero2,
+      image: hero1,
       mainText: "Build More Business with Our Solutions.",
     },
     {
