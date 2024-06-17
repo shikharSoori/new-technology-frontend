@@ -1,10 +1,12 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import type { Metadata } from "next";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "swiper/css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "aos/dist/aos.css";
 import { Sarabun } from "next/font/google";
 export const metadata: Metadata = {
   title: "Soori Technology",
@@ -22,13 +24,15 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en">
-      <body className={sarabun_init.variable}>
-        <Header />
-        <main>{children}</main>
+    <>
+      <html lang="en">
+        <body className={sarabun_init.variable}>
+          <Header />
+          <main>{children}</main>
 
-        <Footer />
-      </body>
-    </html>
+          <Footer />
+        </body>
+      </html>
+    </>
   );
 }

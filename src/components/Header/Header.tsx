@@ -113,6 +113,23 @@ const Header = () => {
                           <Link href="/about">About us</Link>
                         </li>
                         <li>
+                          <Link href="/products">Solutions</Link>
+                          <ul className="dropdown">
+                            <li>
+                              <Link href="/products/wacom">Warehouse Management</Link>
+                            </li>
+                            <li>
+                              <Link href="/products/hid">Assets & Maintainence</Link>
+                            </li>
+                            <li>
+                              <Link href="/products/logitech">Service & Maintainence</Link>
+                            </li>
+                            <li>
+                              <Link href="/products/zebra">HR & Payroll</Link>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
                           <Link href="/products">Products</Link>
                           <ul className="dropdown">
                             <li>
@@ -129,6 +146,7 @@ const Header = () => {
                             </li>
                           </ul>
                         </li>
+
                         <li
                           className={`link ${
                             pathName === "/blog" ? "active" : ""
@@ -229,6 +247,24 @@ const Header = () => {
                     </li>
                     <li className="menu-item-has-children">
                       <Link href="/products">Products</Link>
+                      {/* Add more menu items as needed */}
+                      <ul className="dropdown">
+                        <li>
+                          <Link href="/products/wacom">Wacom</Link>
+                        </li>
+                        <li>
+                          <Link href="/products/hid">HID</Link>
+                        </li>
+                        <li>
+                          <Link href="/products/logitech">Logitech</Link>
+                        </li>
+                        <li>
+                          <Link href="/products/zebra">Zebra</Link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="menu-item-has-children">
+                      <Link href="/products">Solutions</Link>
                       {/* Add more menu items as needed */}
                       <ul className="dropdown">
                         <li>

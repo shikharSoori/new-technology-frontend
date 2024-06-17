@@ -3,9 +3,10 @@ import { formatName } from "@/utils/FormatName";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { MdHeight } from "react-icons/md";
+
 
 const SingleServices = ({ index, image, name, description }: any) => {
-
   const maxLength = 75;
 
   return (

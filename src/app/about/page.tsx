@@ -34,7 +34,7 @@ const About = () => {
                   esse quam
                 </p>
                 <a href="#" className="btn btn-all">
-                  s Start
+                   Start
                 </a>
               </div>
             </div>
