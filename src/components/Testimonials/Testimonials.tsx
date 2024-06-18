@@ -5,7 +5,8 @@ import solution from "../../assets/Solution.png";
 import { getData } from "@/app/lib/getData";
 import TestimonialContent from "./TestimonialContent";
 import TitleText from "./TitleText";
-
+import Link from "next/link";
+import warehouseTruck from "../../assets/warehousetruck.jpeg";
 const Testimonials = async () => {
   var testimonialSlider = {
     // dots: false,
@@ -17,11 +18,11 @@ const Testimonials = async () => {
     // autoplay: true,
     // autoplaySpeed: 2000,
 
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 1000,
     autoplay: true,
-    slidesToShow: 1,
+    slidesToShow: 3,
   };
 
   const data = await getData("about-us-app/ceo-message");
@@ -68,22 +69,288 @@ const Testimonials = async () => {
             data-wow-duration="1s"
             data-wow-delay=".5s"
           >
-            <div className="testimonial-inner mt-0">
+            <div className="feature_slider_inner mt-0">
+              <div className="feature_slider_inner "></div>
               <Slider {...testimonialSlider}>
-                {testimonials?.map((testimonial: any, i: number) => (
-                  <TestimonialContent key={i} {...testimonial} />
-                  // <div
-                  //   key={i}
-                  //   className="testimonial-item testimonial-item--style_2"
-                  // >
-                  //   <div className="testimonial-content">
-                  //     <p>{testimonial.description}</p>
-                  //     <h5 className="client-name">{testimonial.name}</h5>
-                  //     <h6 className="client-desig">
-                  //       {testimonial.designation}
-                  //     </h6>
-                  //   </div>
-                  // </div>
+            {testimonials?.map((testimonial: any, i: number) => (
+                  // <TestimonialContent key={i} {...testimonial} />
+
+                  <div
+                    key={i + 1}
+                    className="item "
+                    data-aos="fade-right"
+                    data-aos-delay={`${900} `}
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div
+                      className="feature_s_item"
+                      style={{
+                        background: `linear-gradient(0deg, rgba(0, 56, 102, 0.78) 0%, rgba(0, 0, 0, 0) 45.5%), url(${warehouseTruck.src}) center / cover no-repeat`,
+                      }}
+                    >
+                      {/* <Image alt="" className="svg social-link" src={warehouseTruck} /> */}
+                      <Link href="#">
+                        <h4>Manufacturing- Adon System</h4>
+                      </Link>
+                      <p>
+                        Phosfluorescently enhance 24/7 resources through
+                        distributed materials. Distinctively incubate
+                        cross-media bandwidth for sticky platforms.
+                      </p>
+                      <Link href="#" className=" know-more ">
+                        Let Start
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+            {testimonials?.map((testimonial: any, i: number) => (
+                  // <TestimonialContent key={i} {...testimonial} />
+
+                  <div
+                    key={i + 1}
+                    className="item "
+                    data-aos="fade-right"
+                    data-aos-delay={`${900} `}
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div
+                      className="feature_s_item"
+                      style={{
+                        background: `linear-gradient(0deg, rgba(0, 56, 102, 0.78) 0%, rgba(0, 0, 0, 0) 45.5%), url(${warehouseTruck.src}) center / cover no-repeat`,
+                      }}
+                    >
+                      {/* <Image alt="" className="svg social-link" src={warehouseTruck} /> */}
+                      <Link href="#">
+                        <h4>Manufacturing- Adon System</h4>
+                      </Link>
+                      <p>
+                        Phosfluorescently enhance 24/7 resources through
+                        distributed materials. Distinctively incubate
+                        cross-media bandwidth for sticky platforms.
+                      </p>
+                      <Link href="#" className=" know-more ">
+                        Let Start
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+            {testimonials?.map((testimonial: any, i: number) => (
+                  // <TestimonialContent key={i} {...testimonial} />
+
+                  <div
+                    key={i + 1}
+                    className="item "
+                    data-aos="fade-right"
+                    data-aos-delay={`${900} `}
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div
+                      className="feature_s_item"
+                      style={{
+                        background: `linear-gradient(0deg, rgba(0, 56, 102, 0.78) 0%, rgba(0, 0, 0, 0) 45.5%), url(${warehouseTruck.src}) center / cover no-repeat`,
+                      }}
+                    >
+                      {/* <Image alt="" className="svg social-link" src={warehouseTruck} /> */}
+                      <Link href="#">
+                        <h4>Manufacturing- Adon System</h4>
+                      </Link>
+                      <p>
+                        Phosfluorescently enhance 24/7 resources through
+                        distributed materials. Distinctively incubate
+                        cross-media bandwidth for sticky platforms.
+                      </p>
+                      <Link href="#" className=" know-more ">
+                        Let Start
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+            {testimonials?.map((testimonial: any, i: number) => (
+                  // <TestimonialContent key={i} {...testimonial} />
+
+                  <div
+                    key={i + 1}
+                    className="item "
+                    data-aos="fade-right"
+                    data-aos-delay={`${900} `}
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div
+                      className="feature_s_item"
+                      style={{
+                        background: `linear-gradient(0deg, rgba(0, 56, 102, 0.78) 0%, rgba(0, 0, 0, 0) 45.5%), url(${warehouseTruck.src}) center / cover no-repeat`,
+                      }}
+                    >
+                      {/* <Image alt="" className="svg social-link" src={warehouseTruck} /> */}
+                      <Link href="#">
+                        <h4>Manufacturing- Adon System</h4>
+                      </Link>
+                      <p>
+                        Phosfluorescently enhance 24/7 resources through
+                        distributed materials. Distinctively incubate
+                        cross-media bandwidth for sticky platforms.
+                      </p>
+                      <Link href="#" className=" know-more ">
+                        Let Start
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+            {testimonials?.map((testimonial: any, i: number) => (
+                  // <TestimonialContent key={i} {...testimonial} />
+
+                  <div
+                    key={i + 1}
+                    className="item "
+                    data-aos="fade-right"
+                    data-aos-delay={`${900} `}
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div
+                      className="feature_s_item"
+                      style={{
+                        background: `linear-gradient(0deg, rgba(0, 56, 102, 0.78) 0%, rgba(0, 0, 0, 0) 45.5%), url(${warehouseTruck.src}) center / cover no-repeat`,
+                      }}
+                    >
+                      {/* <Image alt="" className="svg social-link" src={warehouseTruck} /> */}
+                      <Link href="#">
+                        <h4>Manufacturing- Adon System</h4>
+                      </Link>
+                      <p>
+                        Phosfluorescently enhance 24/7 resources through
+                        distributed materials. Distinctively incubate
+                        cross-media bandwidth for sticky platforms.
+                      </p>
+                      <Link href="#" className=" know-more ">
+                        Let Start
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+            {testimonials?.map((testimonial: any, i: number) => (
+                  // <TestimonialContent key={i} {...testimonial} />
+
+                  <div
+                    key={i + 1}
+                    className="item "
+                    data-aos="fade-right"
+                    data-aos-delay={`${900} `}
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div
+                      className="feature_s_item"
+                      style={{
+                        background: `linear-gradient(0deg, rgba(0, 56, 102, 0.78) 0%, rgba(0, 0, 0, 0) 45.5%), url(${warehouseTruck.src}) center / cover no-repeat`,
+                      }}
+                    >
+                      {/* <Image alt="" className="svg social-link" src={warehouseTruck} /> */}
+                      <Link href="#">
+                        <h4>Manufacturing- Adon System</h4>
+                      </Link>
+                      <p>
+                        Phosfluorescently enhance 24/7 resources through
+                        distributed materials. Distinctively incubate
+                        cross-media bandwidth for sticky platforms.
+                      </p>
+                      <Link href="#" className=" know-more ">
+                        Let Start
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+            {testimonials?.map((testimonial: any, i: number) => (
+                  // <TestimonialContent key={i} {...testimonial} />
+
+                  <div
+                    key={i + 1}
+                    className="item "
+                    data-aos="fade-right"
+                    data-aos-delay={`${900} `}
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div
+                      className="feature_s_item"
+                      style={{
+                        background: `linear-gradient(0deg, rgba(0, 56, 102, 0.78) 0%, rgba(0, 0, 0, 0) 45.5%), url(${warehouseTruck.src}) center / cover no-repeat`,
+                      }}
+                    >
+                      {/* <Image alt="" className="svg social-link" src={warehouseTruck} /> */}
+                      <Link href="#">
+                        <h4>Manufacturing- Adon System</h4>
+                      </Link>
+                      <p>
+                        Phosfluorescently enhance 24/7 resources through
+                        distributed materials. Distinctively incubate
+                        cross-media bandwidth for sticky platforms.
+                      </p>
+                      <Link href="#" className=" know-more ">
+                        Let Start
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+            {testimonials?.map((testimonial: any, i: number) => (
+                  // <TestimonialContent key={i} {...testimonial} />
+
+                  <div
+                    key={i + 1}
+                    className="item "
+                    data-aos="fade-right"
+                    data-aos-delay={`${900} `}
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div
+                      className="feature_s_item"
+                      style={{
+                        background: `linear-gradient(0deg, rgba(0, 56, 102, 0.78) 0%, rgba(0, 0, 0, 0) 45.5%), url(${warehouseTruck.src}) center / cover no-repeat`,
+                      }}
+                    >
+                      {/* <Image alt="" className="svg social-link" src={warehouseTruck} /> */}
+                      <Link href="#">
+                        <h4>Manufacturing- Adon System</h4>
+                      </Link>
+                      <p>
+                        Phosfluorescently enhance 24/7 resources through
+                        distributed materials. Distinctively incubate
+                        cross-media bandwidth for sticky platforms.
+                      </p>
+                      <Link href="#" className=" know-more ">
+                        Let Start
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+                
+            {testimonials?.map((testimonial: any, i: number) => (
+                  // <TestimonialContent key={i} {...testimonial} />
+
+                  <div
+                    key={i + 1}
+                    className="item "
+                    data-aos="fade-right"
+                    data-aos-delay={`${900} `}
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div
+                      className="feature_s_item"
+                      style={{
+                        background: `linear-gradient(0deg, rgba(0, 56, 102, 0.78) 0%, rgba(0, 0, 0, 0) 45.5%), url(${warehouseTruck.src}) center / cover no-repeat`,
+                      }}
+                    >
+                      {/* <Image alt="" className="svg social-link" src={warehouseTruck} /> */}
+                      <Link href="#">
+                        <h4>Manufacturing- Adon System</h4>
+                      </Link>
+                      <p>
+                        Phosfluorescently enhance 24/7 resources through
+                        distributed materials. Distinctively incubate
+                        cross-media bandwidth for sticky platforms.
+                      </p>
+                      <Link href="#" className=" know-more ">
+                        Let Start
+                      </Link>
+                    </div>
+                  </div>
                 ))}
               </Slider>
 

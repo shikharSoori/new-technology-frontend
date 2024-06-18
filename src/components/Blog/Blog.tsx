@@ -7,7 +7,7 @@ import "./blog.css";
 const Blog = async () => {
   const data = await getData("blog-app/blog?limit=0&offset=0");
   const blogs = data?.results;
-  console.log(blogs);
+
   return (
     <section
       className="blog-area section-padding--ptb_90  fix wow fadeInUp"
@@ -33,8 +33,8 @@ const Blog = async () => {
         </div>
         <div className="row mtn-30">
           <div className="col-md-7">
-            <div className="blog-item mt-30">
-              <div className="blog-thumb">
+            <div className="blog-item h-100 mt-30">
+              <div className="blog-thumb h-100">
                 <Link href="blog-details.html">
                   <img src="assets/img/blog/blog-1.jpg" alt="blog thumb" />
                 </Link>
