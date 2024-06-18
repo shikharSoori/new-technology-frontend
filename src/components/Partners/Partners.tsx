@@ -21,7 +21,7 @@ const Partners = async () => {
   const partners = data?.results;
   return (
     <section
-      className="brand-logo-wrapper section-padding fix wow fadeInUp"
+      className="brand-logo-wrapper pb-0 section-padding fix wow fadeInUp"
       data-wow-duration="1s"
       data-wow-delay=".5s"
     >

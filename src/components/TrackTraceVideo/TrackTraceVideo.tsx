@@ -13,7 +13,38 @@ const TrackTraceVideo = () => {
         <div className="container">
           <div className="row align-items-center">
             <div
-              className="col-xl-5 col-lg-5 order-1 wow fadeInLeft"
+              className="col-xl-7 col-lg-7  order-1 wow fadeInRight"
+              data-wow-duration="1s"
+              data-wow-delay=".5s"
+            >
+              <div
+                className="testimonial-thumb testimonial-thumb--style_2"
+                data-aos="zoom-out-left"
+                // data-aos-duration="2000"
+                // data-aos-delay="5000"
+              >
+                {/* <Image
+                  src={solution}
+                  alt="policy banner"
+                  className="moving-vertical"
+                  width={583} // Adjust as needed
+                  height={634} // Adjust as needed
+                /> */}
+                <iframe
+                  width="660"
+                  height="370"
+                  src="https://www.youtube.com/embed/Sxa7MWMZR9A?autoplay=1&mute=1&rel=0&controls=0&modestbranding=1&loop=1&playlist=Sxa7MWMZR9A"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  frameBorder="0"
+                  allowFullScreen
+                  style={{ borderRadius: "60px 0px 60px 0px " }}
+                ></iframe>
+              </div>
+            </div>
+            <div
+              className="col-xl-5 col-lg-5 order-2 wow fadeInLeft"
               data-wow-duration="1s"
               data-wow-delay=".5s"
             >
@@ -21,7 +52,7 @@ const TrackTraceVideo = () => {
                 <h2 className="h1 title">
                   <TitleText
                     title={`
-    Trace <span data-aos="fade-right" data-aos-duration="2000" data-aos-delay="5000">Track &</span> say
+    Track <span data-aos="fade-right" data-aos-duration="2000" data-aos-delay="5000">Trace &</span> \
     <br /> Identity  `}
                   />
                   {/* What <span>Client’s</span> say <br /> happy reviews{" "} */}
@@ -48,36 +79,6 @@ const TrackTraceVideo = () => {
                 </Slider> */}
 
                 {/*  */}
-              </div>
-            </div>
-            <div
-              className="col-xl-7 col-lg-7  order-2 wow fadeInRight"
-              data-wow-duration="1s"
-              data-wow-delay=".5s"
-            >
-              <div
-                className="testimonial-thumb testimonial-thumb--style_2"
-                data-aos="zoom-out-left"
-                // data-aos-duration="2000"
-                // data-aos-delay="5000"
-              >
-                {/* <Image
-                  src={solution}
-                  alt="policy banner"
-                  className="moving-vertical"
-                  width={583} // Adjust as needed
-                  height={634} // Adjust as needed
-                /> */}
-                <iframe
-                  width="660"
-                  height="370"
-                  src="https://www.youtube.com/embed/Sxa7MWMZR9A?autoplay=1&mute=1&rel=0&controls=0&modestbranding=1&loop=1&playlist=Sxa7MWMZR9A"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  frameBorder="0"
-                  allowFullScreen
-                ></iframe>
               </div>
             </div>
           </div>

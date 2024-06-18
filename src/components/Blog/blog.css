@@ -1,0 +1,11 @@
+.home-blog-item {
+  .home-blog-thumb {
+    a {
+      img {
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+  }
+  .blog-content {padding-top: 2px;}
+}

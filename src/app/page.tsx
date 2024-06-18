@@ -15,6 +15,7 @@ import TitleText from "@/components/Testimonials/TitleText";
 import bg from "../assets/innovationBg-removebg.png";
 import Link from "next/link";
 import MotoBanner from "@/components/MotoBanner/MotoBanner";
+import Blog from "@/components/Blog/Blog";
 export const revalidate = 3600;
 const Home = () => {
   return (
@@ -79,98 +80,11 @@ const Home = () => {
       <TrackTraceVideo />
       <HomeServices />
       <WhySoori />
-      <Counter />
+      <Blog />
       <Testimonials />
-      <section
-        className="blog-area section-padding pb-0 fix wow fadeInUp"
-        data-wow-duration="1s"
-        data-wow-delay=".5s"
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="section-title text-center">
-                <h2 className="h1 title">Latest Post from Blog</h2>
-                <p>
-                  labore dolore magnam aliquam quaerat voluptatem ad minima
-                  veniam, quis nostrum exercitationem
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="row mtn-30">
-            <div className="col-md-4">
-              <div className="blog-item mt-30">
-                <div className="blog-thumb">
-                  <Link href="blog-details.html">
-                    <img src="assets/img/blog/blog-1.jpg" alt="blog thumb" />
-                  </Link>
-                </div>
-                <div className="blog-content">
-                  <h3 className="blog-title">
-                    <Link href="blog-details.html">Beneficial strategies</Link>
-                  </h3>
-                  <p>
-                    Ideas es to obtain pain of itself, because it is pain, but
-                    because occasionallyght ocean he Internet tend to a chunks
-                    as necessary with some of themoment
-                  </p>
-                  <div className="blog-meta">
-                    <Link href="#">25 October, 2019</Link>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div className="col-md-4">
-              <div className="blog-item mt-30">
-                <div className="blog-thumb">
-                  <Link href="blog-details.html">
-                    <img src="assets/img/blog/blog-2.jpg" alt="blog thumb" />
-                  </Link>
-                </div>
-                <div className="blog-content">
-                  <h3 className="blog-title">
-                    <Link href="blog-details.html">Themoment necsary</Link>
-                  </h3>
-                  <p>
-                    Ideas es to obtain pain of itself, because it is pain, but
-                    because occasionallyght ocean he Internet tend to a chunks
-                    as necessary with some of themoment
-                  </p>
-                  <div className="blog-meta">
-                    <Link href="#">25 October, 2019</Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="blog-item mt-30">
-                <div className="blog-thumb">
-                  <Link href="blog-details.html">
-                    <img src="assets/img/blog/blog-3.jpg" alt="blog thumb" />
-                  </Link>
-                </div>
-                <div className="blog-content">
-                  <h3 className="blog-title">
-                    <Link href="blog-details.html">Because occasional</Link>
-                  </h3>
-                  <p>
-                    Ideas es to obtain pain of itself, because it is pain, but
-                    because occasionallyght ocean he Internet tend to a chunks
-                    as necessary with some of themoment
-                  </p>
-                  <div className="blog-meta">
-                    <Link href="#">25 October, 2019</Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <Partners />
+      <Counter />
 
       <Scroller />
     </>

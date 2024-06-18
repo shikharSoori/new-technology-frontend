@@ -13,7 +13,7 @@ const WhySoori = async () => {
   // );
   return (
     <section
-      className="blog-area section-padding pb-0 fix wow fadeInUp"
+      className="blog-area section-padding--ptb_90 fix wow fadeInUp"
       data-wow-duration="1s"
       data-wow-delay=".5s"
     >

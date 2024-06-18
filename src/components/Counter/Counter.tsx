@@ -2,6 +2,7 @@
 import { getData } from "@/app/lib/getData";
 import React from "react";
 import CountUp from "@/components/CountUp/Carousel";
+import TitleText from "../Testimonials/TitleText";
 
 const Count = ({ number, title, duration }: any) => {
   return (
@@ -25,20 +26,17 @@ const Counter = async () => {
       data-wow-delay=".5s"
     >
       <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <div className="section-title section-title--style_2 text-center">
-              <h2 className="h1 title">
-                Sucessfully <span>completed</span>
-                {/* {clients[0].totalProducts}+{" "} */}
-                100+ <span>projects</span> with numbers of satisfied client
-              </h2>
-            </div>
-          </div>
+        <div className="section-title section-title--style_2 text-center">
+          <h1 className=" title" style={{ fontSize: "24px" }}>
+            <TitleText
+              title={`Sucessfully <span>completed</span> 100+ <span>projects</span> with <br/> numbers of satisfied client`}
+            />
+          </h1>
         </div>
+     
         <div className="row mtn-40">
           <div className="col-md-3 col-sm-6">
-            <div className="counterup-item mt-40">
+            <div className="counterup-item ">
               <Count
                 className="odometer h1"
                 duration={3}
@@ -49,7 +47,7 @@ const Counter = async () => {
             </div>
           </div>
           <div className="col-md-3 col-sm-6">
-            <div className="counterup-item mt-40">
+            <div className="counterup-item ">
               <Count
                 className="odometer h1"
                 duration={3}
@@ -60,7 +58,7 @@ const Counter = async () => {
             </div>
           </div>
           <div className="col-md-3 col-sm-6">
-            <div className="counterup-item mt-40">
+            <div className="counterup-item ">
               <Count
                 className="odometer h1"
                 duration={3}
@@ -71,7 +69,7 @@ const Counter = async () => {
             </div>
           </div>
           <div className="col-md-3 col-sm-6">
-            <div className="counterup-item mt-40">
+            <div className="counterup-item ">
               <Count
                 className="odometer h1"
                 duration={3}

@@ -24,9 +24,8 @@ const HomeServices = async () => {
             <TitleText title="Our <span>Software</span> Products" />
           </h2>
           <p data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-            With a versatile portfolio, we serve a wide array of industries,
-            including manufacturing, healthcare, retail, logistics, and beyond,
-            ensuring efficient operations and growth.
+            Our software products empower businesses with creative solutions
+            that boost productivity and ensure smooth operations.
           </p>
         </div>
         <div className=" feature_row" style={{ paddingTop: "60px" }}>
