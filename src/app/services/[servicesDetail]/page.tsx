@@ -2,6 +2,7 @@ import { getData } from "@/app/lib/getData";
 import AboutHero from "@/components/Hero/AboutHero";
 import { formatName } from "@/utils/FormatName";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface props {
@@ -11,11 +12,11 @@ interface props {
 }
 export async function generateStaticParams() {
   const data = await getData("solution-app/solution");
-  const solutions = data.results;
+  const solutions = data?.results;
   const params = solutions.map((services: any) => ({
     servicesDetail: formatName(services.name), // Assuming 'name' is the property you want to use as 'company'
   }));
- 
+
   return params;
 }
 const ServicesDetail = async ({ params }: props) => {
@@ -25,7 +26,7 @@ const ServicesDetail = async ({ params }: props) => {
       .replace(/\-/g, "/"); // Replace all slashes with dashes
   };
   const serviceData = await getData("solution-app/solution?limit=0&offset=0");
-  const services = serviceData.results;
+  const services = serviceData?.results;
   const serviceName = reFormatName(params.servicesDetail);
 
   const matchedServie = services.find(
@@ -41,7 +42,7 @@ const ServicesDetail = async ({ params }: props) => {
             <div className="col-lg-12 order-1 order-lg-2 pl-lg-45">
               <div className="blog-item mt-40">
                 <div className="blog-thumb">
-                  <a>
+                  <Link href={"#"}>
                     <Image
                       src={matchedServie.image}
                       width={870}
@@ -52,12 +53,12 @@ const ServicesDetail = async ({ params }: props) => {
                       // objectFit="contain"
                       // object-fit: "cover"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="blog-content blog-details">
                   <h3 className="blog-title">{matchedServie.name}</h3>
                   <div className="blog-meta">
-                    <a href="#">{serviceData.createdDateBs}</a>
+                    <Link href="#">{serviceData.createdDateBs}</Link>
                   </div>
                   <p> {matchedServie.description}</p>
                 </div>

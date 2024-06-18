@@ -17,7 +17,7 @@ const Count = ({ number, title, duration }: any) => {
 };
 const Counter = async () => {
   // const data = await getData(`solution-app/client-count`);
-  // const clients = data.results;
+  // const clients = data?.results;
   return (
     <section
       className="funfacts-section section-padding--ptb_90 fix wow fadeInUp"

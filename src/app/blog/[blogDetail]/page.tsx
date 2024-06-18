@@ -2,6 +2,7 @@ import { getData } from "@/app/lib/getData";
 import AboutHero from "@/components/Hero/AboutHero";
 import { formatName, reFormatName } from "@/utils/FormatName";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface props {
@@ -11,7 +12,7 @@ interface props {
 }
 export async function generateStaticParams() {
   const data = await getData("blog-app/blog");
-  const blogData = data.results;
+  const blogData = data?.results;
   const params = blogData.map((blog: any) => ({
     blogDetail: formatName(blog.name), // Assuming 'name' is the property you want to use as 'company'
   }));
@@ -19,7 +20,7 @@ export async function generateStaticParams() {
 }
 const BlogDetail = async ({ params }: props) => {
   const blogData = await getData("blog-app/blog?limit=0&offset=0");
-  const blogs = blogData.results;
+  const blogs = blogData?.results;
   const blogName = reFormatName(params.blogDetail);
 
   const matchedBrand = blogs.find((blog: any) => blog.name === blogName);
@@ -33,7 +34,7 @@ const BlogDetail = async ({ params }: props) => {
             <div className="col-lg-12 order-1 order-lg-2 pl-lg-45">
               <div className="blog-item mt-40">
                 <div className="blog-thumb">
-                  <a>
+                  <Link href="#">
                     <Image
                       src={matchedBrand.image}
                       width={870}
@@ -44,12 +45,12 @@ const BlogDetail = async ({ params }: props) => {
                       // objectFit="contain"
                       // object-fit: "cover"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="blog-content blog-details">
                   <h3 className="blog-title">{matchedBrand.name}</h3>
                   <div className="blog-meta">
-                    <a href="#">{blogData.createdDateBs}</a>
+                    <Link href="#">{blogData.createdDateBs}</Link>
                   </div>
                   <p> {matchedBrand.description}</p>
                 </div>

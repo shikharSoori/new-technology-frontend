@@ -49,7 +49,7 @@ const Header = () => {
               <div className="row align-items-center justify-content-between">
                 <div className="col-sm-4">
                   <div className="header-top-left text-left text-sm-left">
-                    Call us:<a href="tel:+968573979894"> 01254 789 321</a>
+                    Call us:<Link href="tel:+968573979894"> 01254 789 321</Link>
                   </div>
                 </div>
                 <div className="col-sm-8">
@@ -116,13 +116,19 @@ const Header = () => {
                           <Link href="/products">Solutions</Link>
                           <ul className="dropdown">
                             <li>
-                              <Link href="/products/wacom">Warehouse Management</Link>
+                              <Link href="/products/wacom">
+                                Warehouse Management
+                              </Link>
                             </li>
                             <li>
-                              <Link href="/products/hid">Assets & Maintainence</Link>
+                              <Link href="/products/hid">
+                                Assets & Maintainence
+                              </Link>
                             </li>
                             <li>
-                              <Link href="/products/logitech">Service & Maintainence</Link>
+                              <Link href="/products/logitech">
+                                Service & Maintainence
+                              </Link>
                             </li>
                             <li>
                               <Link href="/products/zebra">HR & Payroll</Link>

@@ -26,7 +26,7 @@ const Testimonials = async () => {
 
   const data = await getData("about-us-app/ceo-message");
 
-  const testimonials = data.results || [];
+  const testimonials = data?.results || [];
 
   // Check if you should render the custom content or the testimonial list
   const shouldRenderCustomContent = true; // Replace with your condition
@@ -44,7 +44,10 @@ const Testimonials = async () => {
     <section className="testimonial-wrapper testimonial-wrapper--style_2 gray-bg section-padding fix">
       <div className="container">
         <div className="row align-items-center">
-        <div className="col-12 d-flex justify-content-center" style={{fontSize:"14px"}}>
+          <div
+            className="col-12 d-flex justify-content-center"
+            style={{ fontSize: "14px" }}
+          >
             <div className="w-50">
               <h2 className="h1 title text-center">
                 <TitleText
@@ -53,13 +56,13 @@ const Testimonials = async () => {
                 />
                 {/* What <span>Client’s</span> say <br /> happy reviews{" "} */}
               </h2>
-              <p >
+              <p>
                 Soori Technology has been a solution provider to some of the
                 world’s biggest companies and brands. Here are some practical
                 examples of how our clients use these solutions day to day.
               </p>
             </div>
-        </div>
+          </div>
           <div
             className="col-xl-12 mt-5 col-lg-5 order-1 wow fadeInLeft"
             data-wow-duration="1s"
@@ -87,7 +90,6 @@ const Testimonials = async () => {
               {/*  */}
             </div>
           </div>
-         
         </div>
       </div>
     </section>

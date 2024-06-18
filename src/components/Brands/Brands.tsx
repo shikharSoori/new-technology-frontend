@@ -27,7 +27,7 @@ const Brands = async () => {
   //         `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`
   //       );
   //       const jsonData = await response.json();
-  //       setBrand(jsonData.results);
+  //       setBrand(jsondata?.results);
   //
   //     } catch (error) {
   //       console.error("Failed to fetch data:", error);

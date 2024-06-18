@@ -21,8 +21,8 @@ export async function generateStaticParams() {
   const data = await getData("product-app/product?limit=0");
   const data1 = await getData("product-app/brand?limit=0");
 
-  const productData = data.results;
-  const brandData = data1.results;
+  const productData = data?.results;
+  const brandData = data1?.results;
 
   const params = productData.map((product: any) => {
     const brandName = brandData?.find(
@@ -34,14 +34,13 @@ export async function generateStaticParams() {
     };
   });
 
-
   return params;
 }
 const Page = async ({ params }: props) => {
   const productName = reFormatName(params.productDetail);
 
   const productData = await getData("product-app/product?limit=0&offset=0");
-  const products = productData.results;
+  const products = productData?.results;
   const matchedProduct = products.find(
     (product: any) => product.productName === productName
   );

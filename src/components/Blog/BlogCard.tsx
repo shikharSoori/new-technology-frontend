@@ -7,7 +7,6 @@ import React, { useState } from "react";
 const BlogCard = ({ blog }: any) => {
   const maxLength = 100;
 
-
   return (
     <>
       <div className="blog-item mt-40">
@@ -26,7 +25,7 @@ const BlogCard = ({ blog }: any) => {
             : blog.description}
 
           <div className="blog-meta">
-            <a href="#">{blog.createdDateBs}</a>
+            <Link href="#">{blog.createdDateBs}</Link>
           </div>
         </div>
       </div>

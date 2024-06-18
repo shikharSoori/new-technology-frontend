@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const HeroItem = () => {
@@ -13,9 +14,9 @@ const HeroItem = () => {
                   <h1 className="slide-title">
                     Great Plan to increase your Business
                   </h1>
-                  <a href="about.html" className="btn btn-hero">
+                  <Link href="about.html" className="btn btn-hero">
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-xl-7 col-sm-6">

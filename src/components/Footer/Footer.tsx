@@ -12,7 +12,7 @@ import React from "react";
 
 const Footer = async () => {
   const data = await getData(`blog-app/blog?limit=3`);
-  const blogs = data.results;
+  const blogs = data?.results;
 
   var brandSlider = {
     dots: false,
@@ -229,7 +229,7 @@ const Footer = async () => {
                       : description}
 
                     <div className="blog-meta">
-                      <a href="#">{createdDate}</a>
+                      <Link href="#">{createdDate}</Link>
                     </div>
                   </div>
                 </div> */}
@@ -248,7 +248,6 @@ const Footer = async () => {
                               />
                             </Link>
                           </div>
-                    
                         </div>
                       </React.Fragment>
                     );

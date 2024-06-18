@@ -13,41 +13,14 @@ import icon3 from "../assets/icon-3.png";
 import icon4 from "../assets/icon-4.png";
 import TitleText from "@/components/Testimonials/TitleText";
 import bg from "../assets/innovationBg-removebg.png";
+import Link from "next/link";
+import MotoBanner from "@/components/MotoBanner/MotoBanner";
 export const revalidate = 3600;
 const Home = () => {
   return (
     <>
       <HomeHero />
-      <div className="testimonial-wrapper testimonial-wrapper--style_2   gray-bg" style={{padding:"60px 0"}}>
-        <div className="container wow fade-in-up">
-          <div className="row align-items-center">
-            <Image
-              style={{ position: "absolute", right: "0" }}
-              src={bg}
-              alt="bg"
-              height={400}
-            />
-            <div className="col-9">
-              <h2 className="h1 title" style={{ fontSize: "48px" }}>
-                <TitleText
-                  title={`We are The <span>Innovation   </span> Corporate
-                 `}
-                />
-              </h2>
-              <p className="my-4">
-                Create some exclusive way to solve our customer problems Create
-                some exclusive way to solve our customer problems Create some
-                exclusive way to solve our customer problems exclusive way to
-                solve our customer problems exclusive way to solve our customer
-               
-              </p>
-              <a href="/contact" className="btn btn-all">
-                Contact Us
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <MotoBanner />
       {/* <section className="policy-area pb-125 pt-125">
         <div className="container">
           <div className="row mtn-30">
@@ -105,9 +78,9 @@ const Home = () => {
 
       <TrackTraceVideo />
       <HomeServices />
+      <WhySoori />
       <Counter />
       <Testimonials />
-      <WhySoori />
       <section
         className="blog-area section-padding pb-0 fix wow fadeInUp"
         data-wow-duration="1s"
@@ -129,13 +102,13 @@ const Home = () => {
             <div className="col-md-4">
               <div className="blog-item mt-30">
                 <div className="blog-thumb">
-                  <a href="blog-details.html">
+                  <Link href="blog-details.html">
                     <img src="assets/img/blog/blog-1.jpg" alt="blog thumb" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="blog-content">
                   <h3 className="blog-title">
-                    <a href="blog-details.html">Beneficial strategies</a>
+                    <Link href="blog-details.html">Beneficial strategies</Link>
                   </h3>
                   <p>
                     Ideas es to obtain pain of itself, because it is pain, but
@@ -143,7 +116,7 @@ const Home = () => {
                     as necessary with some of themoment
                   </p>
                   <div className="blog-meta">
-                    <a href="#">25 October, 2019</a>
+                    <Link href="#">25 October, 2019</Link>
                   </div>
                 </div>
               </div>
@@ -152,13 +125,13 @@ const Home = () => {
             <div className="col-md-4">
               <div className="blog-item mt-30">
                 <div className="blog-thumb">
-                  <a href="blog-details.html">
+                  <Link href="blog-details.html">
                     <img src="assets/img/blog/blog-2.jpg" alt="blog thumb" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="blog-content">
                   <h3 className="blog-title">
-                    <a href="blog-details.html">Themoment necsary</a>
+                    <Link href="blog-details.html">Themoment necsary</Link>
                   </h3>
                   <p>
                     Ideas es to obtain pain of itself, because it is pain, but
@@ -166,7 +139,7 @@ const Home = () => {
                     as necessary with some of themoment
                   </p>
                   <div className="blog-meta">
-                    <a href="#">25 October, 2019</a>
+                    <Link href="#">25 October, 2019</Link>
                   </div>
                 </div>
               </div>
@@ -175,13 +148,13 @@ const Home = () => {
             <div className="col-md-4">
               <div className="blog-item mt-30">
                 <div className="blog-thumb">
-                  <a href="blog-details.html">
+                  <Link href="blog-details.html">
                     <img src="assets/img/blog/blog-3.jpg" alt="blog thumb" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="blog-content">
                   <h3 className="blog-title">
-                    <a href="blog-details.html">Because occasional</a>
+                    <Link href="blog-details.html">Because occasional</Link>
                   </h3>
                   <p>
                     Ideas es to obtain pain of itself, because it is pain, but
@@ -189,7 +162,7 @@ const Home = () => {
                     as necessary with some of themoment
                   </p>
                   <div className="blog-meta">
-                    <a href="#">25 October, 2019</a>
+                    <Link href="#">25 October, 2019</Link>
                   </div>
                 </div>
               </div>

@@ -6,6 +6,7 @@ import zebraImg from "../../assets/zebra.png";
 import wacomImg from "../../assets/wacom.png";
 import hidImg from "../../assets/hid.png";
 import { getData } from "@/app/lib/getData";
+import Link from "next/link";
 const Partners = async () => {
   var brandSlider = {
     dots: false,
@@ -17,7 +18,7 @@ const Partners = async () => {
     autoplaySpeed: 500,
   };
   const data = await getData(`product-app/our-partner`);
-  const partners = data.results;
+  const partners = data?.results;
   return (
     <section
       className="brand-logo-wrapper section-padding fix wow fadeInUp"
@@ -33,14 +34,14 @@ const Partners = async () => {
               {partners?.map((member: any) => {
                 return (
                   <div key={member.id} className="brand-item">
-                    <a href="#">
+                    <Link href="#">
                       <Image
                         src={member.image}
                         alt="policy banner"
                         width={200} // Adjust as needed
                         height={150} // Adjust as needed
                       />
-                    </a>
+                    </Link>
                   </div>
                 );
               })}

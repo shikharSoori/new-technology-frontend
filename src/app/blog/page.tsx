@@ -8,7 +8,7 @@ import BlogCard from "@/components/Blog/BlogCard";
 
 const Blogs = async () => {
   const data = await getData("blog-app/blog?limit=0&offset=0");
-  const blogs = data.results;
+  const blogs = data?.results;
 
   return (
     <>

@@ -13,26 +13,26 @@ interface props {
   };
 }
 
-
 export async function generateStaticParams() {
   const data = await getData("product-app/brand?limit=0");
-  const brandData = data.results;
-  const params = brandData.map((brand: any) => ({
+  const brandData = data?.results;
+  const params = brandData?.map((brand: any) => ({
     company: brand.brand.toLowerCase(), // Assuming 'name' is the property you want to use as 'company'
   }));
   return params;
 }
 const Page = async ({ params }: props) => {
   const brandData = await getData("product-app/brand?limit=0");
-  const brands = brandData.results;
-  const brandName = params.company;
-  const matchedBrand = brands.find(
+  const brands = brandData?.results;
+  const brandName = params?.company;
+  console.log(params,"hbgfhg");
+  const matchedBrand = brands?.find(
     (brand: any) => brand.brand.toLowerCase() === brandName
   );
   const data = await getData(
     `product-app/product?ordering=-id&brand_id=${matchedBrand.id}&offset=0&limit=0`
   );
-  const brandProducts = data.results;
+  const brandProducts = data?.results;
 
   return (
     <>
@@ -93,23 +93,23 @@ const Page = async ({ params }: props) => {
                   <div className="paginatoin-area text-center mt-40">
                     <ul className="pagination-box">
                       <li>
-                        <a className="previous" href="#">
+                        <Link className="previous" href="#">
                           <i className="fa fa-angle-left"></i>
-                        </a>
+                        </Link>
                       </li>
                       <li className="active">
-                        <a href="#">1</a>
+                        <Link href="#">1</Link>
                       </li>
                       <li>
-                        <a href="#">2</a>
+                        <Link href="#">2</Link>
                       </li>
                       <li>
-                        <a href="#">3</a>
+                        <Link href="#">3</Link>
                       </li>
                       <li>
-                        <a className="next" href="#">
+                        <Link className="next" href="#">
                           <i className="fa fa-angle-right"></i>
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>

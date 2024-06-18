@@ -9,6 +9,7 @@ import icon1 from "../../assets/icon-1.png";
 import icon2 from "../../assets/icon-2.png";
 import icon3 from "../../assets/icon-3.png";
 import icon4 from "../../assets/icon-4.png";
+import Link from "next/link";
 const About = () => {
   return (
     <>
@@ -33,9 +34,9 @@ const About = () => {
                   autem vel eum iure reprehenderit qui in ea voluptate velit
                   esse quam
                 </p>
-                <a href="#" className="btn btn-all">
-                   Start
-                </a>
+                <Link href="#" className="btn btn-all">
+                  Start
+                </Link>
               </div>
             </div>
             <div className="col-lg-6 offset-lg-1 order-2 order-lg-2">
@@ -94,9 +95,9 @@ const About = () => {
                   Quis autem vel eum iure reprehenderit qui in ea voluptate
                   velit esse quam
                 </p>
-                <a href="#" className="btn btn-all">
+                <Link href="#" className="btn btn-all">
                   Let Start
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -13,7 +13,7 @@ import logo1 from "../../assets/tracklinelogo.png";
 import logo2 from "../../assets/onservicelogo.png";
 const HomeHero = async () => {
   const data = await getData(`core-app/banner-images`);
-  const heroContent = data.results;
+  const heroContent = data?.results;
 
   var settings = {
     dots: false,

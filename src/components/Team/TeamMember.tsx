@@ -4,8 +4,8 @@ import React from "react";
 
 const TeamMember = async () => {
   const data = await getData(`about-us-app/our-team`);
-  const teamMember = data.results;
- 
+  const teamMember = data?.results;
+
   return (
     <>
       {teamMember?.map((member: any) => {

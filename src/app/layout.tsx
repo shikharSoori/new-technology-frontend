@@ -8,6 +8,8 @@ import "swiper/css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
 import { Sarabun } from "next/font/google";
+
+
 export const metadata: Metadata = {
   title: "Soori Technology",
   description:
@@ -28,7 +30,8 @@ export default function RootLayout({ children }: Props) {
       <html lang="en">
         <body className={sarabun_init.variable}>
           <Header />
-          <main>{children}</main>
+
+          <main >{children}</main>
 
           <Footer />
         </body>

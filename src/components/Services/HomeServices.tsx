@@ -10,9 +10,10 @@ import ladder from "../../assets/ladder.png";
 import { getData } from "@/app/lib/getData";
 import SingleServices from "./Services";
 import TitleText from "../Testimonials/TitleText";
+import Link from "next/link";
 const HomeServices = async () => {
   const data = await getData(`solution-app/solution`);
-  const services = data.results;
+  const services = data?.results;
   // const [expandedCardIndices, setExpandedCardIndices] = useState([]);
 
   return (
@@ -22,7 +23,7 @@ const HomeServices = async () => {
           <h2 className="h1 title">
             <TitleText title="Our <span>Software</span> Products" />
           </h2>
-          <p>
+          <p data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             With a versatile portfolio, we serve a wide array of industries,
             including manufacturing, healthcare, retail, logistics, and beyond,
             ensuring efficient operations and growth.
@@ -30,7 +31,12 @@ const HomeServices = async () => {
         </div>
         <div className=" feature_row" style={{ paddingTop: "60px" }}>
           <div className="feature_slider_inner row">
-            <div className="item col-3">
+            <div
+              className="item col-3"
+              data-aos="fade-right"
+              data-aos-delay="1200"
+              data-aos-easing="ease-in-sine"
+            >
               <div
                 className="feature_s_item"
                 style={{
@@ -38,9 +44,9 @@ const HomeServices = async () => {
                 }}
               >
                 <Image alt="" className="svg social-link" src={aeroplane} />
-                <a href="#">
+                <Link href="#">
                   <h4>CUBIX</h4>
-                </a>
+                </Link>
                 <p>
                   Phosfluorescently enhance 24/7 resources through distributed
                   materials. Distinctively incubate cross-media bandwidth for
@@ -48,7 +54,12 @@ const HomeServices = async () => {
                 </p>
               </div>
             </div>
-            <div className="item col-3">
+            <div
+              className="item col-3"
+              data-aos="fade-right"
+              data-aos-delay="900"
+              data-aos-easing="ease-in-sine"
+            >
               <div
                 className="feature_s_item"
                 style={{
@@ -56,9 +67,9 @@ const HomeServices = async () => {
                 }}
               >
                 <Image alt="" className="svg social-link" src={aeroplane} />
-                <a href="#">
+                <Link href="#">
                   <h4>ON SERVICE</h4>
-                </a>
+                </Link>
                 <p>
                   Phosfluorescently enhance 24/7 resources through distributed
                   materials. Distinctively incubate cross-media bandwidth for
@@ -66,7 +77,12 @@ const HomeServices = async () => {
                 </p>
               </div>
             </div>
-            <div className="item col-3">
+            <div
+              className="item col-3"
+              data-aos="fade-right"
+              data-aos-delay="600"
+              data-aos-easing="ease-in-sine"
+            >
               <div
                 className="feature_s_item"
                 style={{
@@ -74,9 +90,9 @@ const HomeServices = async () => {
                 }}
               >
                 <Image alt="" className="svg social-link" src={aeroplane} />
-                <a href="#">
+                <Link href="#">
                   <h4>TRACK LINE</h4>
-                </a>
+                </Link>
                 <p>
                   Phosfluorescently enhance 24/7 resources through distributed
                   materials. Distinctively incubate cross-media bandwidth for
@@ -84,7 +100,12 @@ const HomeServices = async () => {
                 </p>
               </div>
             </div>
-            <div className="item col-3">
+            <div
+              className="item col-3"
+              data-aos="fade-right"
+              data-aos-delay="300"
+              data-aos-easing="ease-in-sine"
+            >
               <div
                 className="feature_s_item"
                 style={{
@@ -92,9 +113,9 @@ const HomeServices = async () => {
                 }}
               >
                 <Image alt="" className="svg social-link" src={aeroplane} />
-                <a href="#">
+                <Link href="#">
                   <h4>ACTIV</h4>
-                </a>
+                </Link>
                 <p>
                   Phosfluorescently enhance 24/7 resources through distributed
                   materials. Distinctively incubate cross-media bandwidth for
