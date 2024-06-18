@@ -105,6 +105,7 @@ const HomeHero = async () => {
                             style={{ width: "max-content" }}
                           >
                             <Image
+                              priority={true}
                               src={hero.logo}
                               alt="policy banner"
                               className="moving-vertical "
