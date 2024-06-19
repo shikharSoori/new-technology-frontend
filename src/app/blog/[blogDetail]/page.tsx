@@ -23,7 +23,7 @@ const BlogDetail = async ({ params }: props) => {
   const blogs = blogData?.results;
   const blogName = reFormatName(params.blogDetail);
 
-  const matchedBrand = blogs.find((blog: any) => blog.name === blogName);
+  const matchedBrand = blogs?.find((blog: any) => blog.name === blogName);
 
   return (
     <>

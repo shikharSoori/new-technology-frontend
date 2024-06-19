@@ -41,7 +41,7 @@ const Page = async ({ params }: props) => {
 
   const productData = await getData("product-app/product?limit=0&offset=0");
   const products = productData?.results;
-  const matchedProduct = products.find(
+  const matchedProduct = products?.find(
     (product: any) => product.productName === productName
   );
 

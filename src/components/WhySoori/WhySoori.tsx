@@ -5,6 +5,7 @@ import { fetchWhySoori, getData } from "@/app/lib/getData";
 import Link from "next/link";
 import TitleText from "../Testimonials/TitleText";
 
+export const revalidate = 60;
 const WhySoori = async () => {
   const data = await getData(`product-app/why-soori`);
   const whyReason = data?.results;

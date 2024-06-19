@@ -29,7 +29,7 @@ const ServicesDetail = async ({ params }: props) => {
   const services = serviceData?.results;
   const serviceName = reFormatName(params.servicesDetail);
 
-  const matchedServie = services.find(
+  const matchedServie = services?.find(
     (service: any) => service.name === serviceName
   );
 

@@ -2,7 +2,7 @@ import path from "path";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // reactStrictMode: true,
-  output: "export",
+  // output: "export",
   sassOptions: {
     includePaths: [path.join(process.cwd(), "styles")], // Correct path for SASS/SCSS
   },

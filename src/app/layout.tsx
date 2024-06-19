@@ -9,7 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
 import { Sarabun } from "next/font/google";
 
-
 export const metadata: Metadata = {
   title: "Soori Technology",
   description:
@@ -23,7 +22,8 @@ const sarabun_init = Sarabun({
 type Props = {
   children: React.ReactNode;
 };
-
+export const dynamic = "force-dynamic";
+export const revalidate = 60;
 export default function RootLayout({ children }: Props) {
   return (
     <>
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: Props) {
         <body className={sarabun_init.variable}>
           <Header />
 
-          <main >{children}</main>
+          <main>{children}</main>
 
           <Footer />
         </body>
