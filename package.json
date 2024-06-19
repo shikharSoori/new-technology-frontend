@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "env-cmd -f .env next dev",
     "dev:local": "env-cmd -f .env.local next dev",
-    "build": "next build",
+    "build": "next build ",
     "start": "npx serve@latest out",
     "lint": "next lint"
   },

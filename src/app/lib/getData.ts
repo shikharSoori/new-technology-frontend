@@ -3,7 +3,7 @@ export const getData = async (url: string) => {
   let data;
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`, {
-      cache: "no-store",
+      // cache: "no-store",
     });
     data = await response.json();
   } catch (error) {
@@ -33,8 +33,8 @@ export const fetchData = async (setBrands: any) => {
   // noStore();
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`,
-      { cache: "no-store" }
+      `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`
+      // { cache: "no-store" }
     );
     const jsonData = await response.json();
     setBrands(jsonData.results);

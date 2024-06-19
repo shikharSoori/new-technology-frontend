@@ -22,8 +22,7 @@ const sarabun_init = Sarabun({
 type Props = {
   children: React.ReactNode;
 };
-export const dynamic = "force-dynamic";
-export const revalidate = 60;
+export const dynamic = "auto";
 export default function RootLayout({ children }: Props) {
   return (
     <>

@@ -16,7 +16,7 @@ import bg from "../assets/innovationBg-removebg.png";
 import Link from "next/link";
 import MotoBanner from "@/components/MotoBanner/MotoBanner";
 import Blog from "@/components/Blog/Blog";
-export const revalidate = 3600;
+// export const revalidate = 3600;
 const Home = () => {
   return (
     <>
