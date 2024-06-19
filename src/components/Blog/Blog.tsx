@@ -33,7 +33,7 @@ const Blog = async () => {
         </div>
         <div className="row mtn-30">
           <div className="col-md-7">
-            <div className="blog-item h-100 mt-30">
+            <div className="d-flex flex-column blog-item h-100 mt-30">
               <div className="blog-thumb h-100">
                 <Link href="blog-details.html">
                   <img src="assets/img/blog/blog-1.jpg" alt="blog thumb" />
@@ -56,54 +56,84 @@ const Blog = async () => {
           </div>
           <div className="col-5 row">
             {blogs?.length > 0 ? (
-              blogs.map((blogitem: any) => (
-                <div key={blogitem.id} className="col-6">
-                  <div className="home-blog-item mt-30">
-                    <div className="home-blog-thumb">
-                      <Link href="blog-details.html">
-                        <Image
-                        className="home-blog-thumb-img"
-                          height={200}
-                          width={200}
-                          src={blogitem.image}
-                          alt="blog thumb"
-                        />
-                      </Link>
-                    </div>
-                    <div className="blog-content">
-                      <p className="blog-title">
-                        <Link href="blog-details.html">{blogitem.name}</Link>
-                      </p>
+              blogs.map((blogitem: any) => {
+                const maxLength = 50;
+                return (
+                  <div key={blogitem.id} className="col-12">
+                    <div className="home blog-item d-flex mt-30 row">
+                      <div className="blog-thumb col-5 p-0">
+                        <Link href="blog-details.html">
+                          <Image
+                            className="blog-thumb-img"
+                            height={200}
+                            width={200}
+                            src={blogitem.image}
+                            alt="blog thumb"
+                          />
+                        </Link>
+                      </div>
+                      <div className="blog-content col-7">
+                        <h3 className="blog-title">
+                          <Link href="blog-details.html">
+                            Beneficial strategies
+                          </Link>
+                        </h3>
+                        <p>
+                        {blogitem.description.length >= maxLength
+                            ? `${blogitem.description
+                                .substr(0, maxLength)
+                                .trim()}...`
+                            : blogitem.description}
+                        </p>
+                        <div className="blog-meta">
+                          <Link href="#">25 October, 2019</Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))
+                );
+              })
             ) : (
               <p>No blogs found</p>
             )}
             {blogs?.length > 0 ? (
-              blogs.map((blogitem: any) => (
-                <div key={blogitem.id} className="col-6">
-                  <div className="home-blog-item mt-30">
-                    <div className="home-blog-thumb">
-                      <Link href="blog-details.html">
-                        <Image
-                        className="home-blog-thumb-img"
-                          height={200}
-                          width={200}
-                          src={blogitem.image}
-                          alt="blog thumb"
-                        />
-                      </Link>
-                    </div>
-                    <div className="blog-content">
-                      <p className="blog-title">
-                        <Link href="blog-details.html">{blogitem.name}</Link>
-                      </p>
+              blogs.slice(0, 1).map((blogitem: any) => {
+                const maxLength = 50;
+                return (
+                  <div key={blogitem.id} className="col-12">
+                    <div className="home blog-item d-flex mt-30 row">
+                      <div className="blog-thumb col-5 p-0">
+                        <Link href="blog-details.html">
+                          <Image
+                            className="blog-thumb-img"
+                            height={200}
+                            width={200}
+                            src={blogitem.image}
+                            alt="blog thumb"
+                          />
+                        </Link>
+                      </div>
+                      <div className="blog-content col-7">
+                        <h3 className="blog-title">
+                          <Link href="blog-details.html">
+                            Beneficial strategies
+                          </Link>
+                        </h3>
+                        <p>
+                          {blogitem.description.length >= maxLength
+                            ? `${blogitem.description
+                                .substr(0, maxLength)
+                                .trim()}...`
+                            : blogitem.description}
+                        </p>
+                        <div className="blog-meta">
+                          <Link href="#">25 October, 2019</Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))
+                );
+              })
             ) : (
               <p>No blogs found</p>
             )}

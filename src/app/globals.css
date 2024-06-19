@@ -450,12 +450,12 @@ header {
 /*------- short classes end -------*/
 /*------- header top style start -------*/
 .header-top {
-  padding: 12px 0;
+  padding: 6px 0;
 }
 
 .header-top-left {
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -1914,6 +1914,9 @@ header {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .feature_slider_inner {
+  .slick-list {
+    padding-top: 20px;
+  }
   .feature_s_item:hover {
     display: flex;
     transform: translateY(-10px); /* Example transform for hover */

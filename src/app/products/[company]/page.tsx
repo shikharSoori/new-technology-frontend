@@ -25,7 +25,6 @@ const Page = async ({ params }: props) => {
   const brandData = await getData("product-app/brand?limit=0");
   const brands = brandData?.results;
   const brandName = params?.company;
-  console.log(params,"hbgfhg");
   const matchedBrand = brands?.find(
     (brand: any) => brand.brand.toLowerCase() === brandName
   );

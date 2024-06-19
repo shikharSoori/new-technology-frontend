@@ -1,9 +1,10 @@
 export const getData = async (url: string) => {
-  console.log("url ", url);
   // noStore();
   let data;
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`, {
+      cache: "no-store",
+    });
     data = await response.json();
   } catch (error) {
     console.error("Failed to fetch data:", error);

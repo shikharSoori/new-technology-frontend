@@ -1,5 +1,7 @@
-.home-blog-item {
-  .home-blog-thumb {
+.home.blog-item {
+    flex-direction: row;
+  .blog-thumb {
+    height: max-content;
     a {
       img {
         height: 200px;

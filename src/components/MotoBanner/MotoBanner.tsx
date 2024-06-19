@@ -3,7 +3,8 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import TitleText from "../Testimonials/TitleText";
 import Link from "next/link";
-import bg from "../../assets/innovationBg-removebg.png";
+import bg from "../../assets/redbulb-1.png";
+import bg2 from "../../assets/redbulb-2.png";
 import AOS from "aos";
 const MotoBanner = () => {
   useEffect(() => {
@@ -12,17 +13,30 @@ const MotoBanner = () => {
   return (
     <div
       className="testimonial-wrapper testimonial-wrapper--style_2   gray-bg"
-      style={{ padding: "60px 0" }}
+      style={{
+        position: "relative",
+        padding: "60px 0",
+        // backgroundImage: `url(${bg.src})`,
+        // backgroundSize: "cover",
+      }}
     >
-      <div className="container wow fade-in-up">
+      <div className="container wow fade-in-up ">
         <div className="row align-items-center">
           <Image
             className=""
             data-aos="fade-left"
-            style={{ position: "absolute", right: "0" }}
+            style={{ position: "absolute", right: "20px", bottom: "0px" }}
             src={bg}
             alt="bg"
             height={300}
+          />
+          <Image
+            className=""
+            data-aos="fade-left"
+            style={{ position: "absolute", left: "-50px", top: "20px" }}
+            src={bg2}
+            alt="bg"
+            height={250}
           />
           <div
             className="col-9"

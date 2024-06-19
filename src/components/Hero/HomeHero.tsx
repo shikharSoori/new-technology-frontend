@@ -83,7 +83,6 @@ const HomeHero = async () => {
         <Slider {...settings}>
           {data1?.map((hero: any) => {
             const { image } = hero;
-
             return (
               <div key={hero.id} className="hero-single-slide">
                 <div

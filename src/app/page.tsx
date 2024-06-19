@@ -31,10 +31,7 @@ const Home = () => {
                   <Image src={icon1} alt="icon" width={50} height={50} />
                 </div>
                 <h3 className="service-policy-title">Creative Ideas</h3>
-                <p className="service-policy-desc">
-                  Ideas es to obtain pain of itself, because it is pain, but
-                  because occasionallyght ocean
-                </p>
+                
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
@@ -43,10 +40,7 @@ const Home = () => {
                   <Image src={icon2} alt="icon" width={50} height={50} />
                 </div>
                 <h3 className="service-policy-title">Low Cost</h3>
-                <p className="service-policy-desc">
-                  Ideas es to obtain pain of itself, because it is pain, but
-                  because occasionallyght ocean
-                </p>
+                
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
@@ -55,10 +49,7 @@ const Home = () => {
                   <Image src={icon3} alt="icon" width={50} height={50} />
                 </div>
                 <h3 className="service-policy-title">Talented Team</h3>
-                <p className="service-policy-desc">
-                  Ideas es to obtain pain of itself, because it is pain, but
-                  because occasionallyght ocean
-                </p>
+                
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
@@ -67,10 +58,7 @@ const Home = () => {
                   <Image src={icon4} alt="icon" width={50} height={50} />
                 </div>
                 <h3 className="service-policy-title">Online Support</h3>
-                <p className="service-policy-desc">
-                  Ideas es to obtain pain of itself, because it is pain, but
-                  because occasionallyght ocean
-                </p>
+                
               </div>
             </div>
           </div>
@@ -80,6 +68,44 @@ const Home = () => {
       <TrackTraceVideo />
       <HomeServices />
       <WhySoori />
+      <section className="policy-area pb-125">
+        <div className="container">
+          <div className="row mtn-30">
+            <div className="col-lg-3 col-md-6">
+              <div className="service-policy-item mt-30">
+                <div className="service-policy-icon">
+                  <Image src={icon1} alt="icon" width={50} height={50} />
+                </div>
+                <h3 className="service-policy-title">Creative Ideas</h3>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <div className="service-policy-item mt-30">
+                <div className="service-policy-icon">
+                  <Image src={icon2} alt="icon" width={50} height={50} />
+                </div>
+                <h3 className="service-policy-title">Low Cost</h3>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <div className="service-policy-item mt-30">
+                <div className="service-policy-icon">
+                  <Image src={icon3} alt="icon" width={50} height={50} />
+                </div>
+                <h3 className="service-policy-title">Talented Team</h3>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <div className="service-policy-item mt-30">
+                <div className="service-policy-icon">
+                  <Image src={icon4} alt="icon" width={50} height={50} />
+                </div>
+                <h3 className="service-policy-title">Online Support</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <Blog />
       <Testimonials />
 
