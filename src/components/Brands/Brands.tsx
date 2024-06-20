@@ -1,64 +1,54 @@
-"use client";
+// "use client";
 import { fetchData, getData } from "@/app/lib/getData";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-export const productCount = async (brandId: string) => {
+// export const revalidate = 60;
+console.log(60 * 60);
+export const productCount = async (brandId: number) => {
   const data = await getData(
     `product-app/product?ordering=-id&brand_id=${brandId}`
   );
-  return data?.count || 0;
+  const productCounts = data?.count;
+  return productCounts;
 };
 
-interface Brand {
-  id: string;
-  brand: string;
-}
+const Brands = async () => {
+  const data = await getData("product-app/brand");
+  // const [brands, setBrand] = useState([]);
+  // const pathName = usePathname();
+  const brands = data?.results;
 
-const Brands = () => {
-  const [brandData, setBrandData] = useState<Brand[]>([]);
-  const [productCounts, setProductCounts] = useState<{ [key: string]: number }>(
-    {}
-  );
-
-  const pathName = usePathname();
-
-  useEffect(() => {
-    (async () => {
-      const data = await fetchData("product-app/brand?limit=0");
-      if (data && data.results) {
-        setBrandData(data.results);
-
-        const counts: { [key: string]: number } = {};
-        await Promise.all(
-          data.results.map(async (brand: Brand) => {
-            const count = await productCount(brand.id);
-            counts[brand.id] = count;
-          })
-        );
-        setProductCounts(counts);
-      }
-    })();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`
+  //       );
+  //       const jsonData = await response.json();
+  //       setBrand(jsondata?.results);
+  //
+  //     } catch (error) {
+  //       console.error("Failed to fetch data:", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="blog-widget mt-40">
       <h4 className="blog-widget-title">Brands</h4>
       <ul className="blog-categories">
-        {brandData.map((brand) => (
-          <li key={brand.id}>
+        {brands?.map((brand: any) => (
+          <li key={brand?.id}>
             <Link
               href={`/products/${brand.brand.toLowerCase()}`}
-              className={
-                pathName === `/products/${brand.brand.toLowerCase()}`
-                  ? "active"
-                  : ""
-              }
+              // className={` ${pathName === "/products/zebra" ? "active" : ""}`}
             >
               {brand.brand}
             </Link>
-            <span>({productCounts[brand.id] || 0})</span>
+            <span>({productCount(brand?.id)})</span>
           </li>
         ))}
       </ul>
