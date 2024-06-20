@@ -73,7 +73,6 @@ const Testimonials = async () => {
               <Slider {...testimonialSlider}>
                 {testimonials?.map((testimonial: any, i: number) => {
                   const maxLength = 100;
-                  console.log(testimonial);
                   const { image, name, description } = testimonial;
                   return (
                     // <TestimonialContent key={i} {...testimonial} />
@@ -107,7 +106,6 @@ const Testimonials = async () => {
                     </div>
                   );
                 })}
-            
               </Slider>
 
               {/*  */}

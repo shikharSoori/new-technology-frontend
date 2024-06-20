@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 // export const revalidate = 60;
-console.log(60 * 60);
 export const productCount = async (brandId: number) => {
   const data = await getData(
     `product-app/product?ordering=-id&brand_id=${brandId}`
