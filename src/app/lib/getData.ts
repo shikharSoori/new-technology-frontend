@@ -29,15 +29,14 @@ export const getData = async (url: string) => {
 //   return productCounts;
 // };
 
-export const fetchData = async (setBrands: any) => {
-  // noStore();
+export const fetchData = async (url: string) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/product-app/brand`
+      `${process.env.NEXT_PUBLIC_API_URL}/${url}`
       // { cache: "no-store" }
     );
-    const jsonData = await response.json();
-    setBrands(jsonData.results);
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error("Failed to fetch data:", error);
   }

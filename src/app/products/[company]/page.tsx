@@ -6,6 +6,7 @@ import AboutHero from "@/components/Hero/AboutHero";
 import { formatName } from "@/utils/FormatName";
 import Image from "next/image";
 import Link from "next/link";
+import BrandProducts from "./BrandProducts";
 
 interface props {
   params: {
@@ -22,16 +23,7 @@ export async function generateStaticParams() {
   return params;
 }
 const Page = async ({ params }: props) => {
-  const brandData = await getData("product-app/brand?limit=0");
-  const brands = brandData?.results;
-  const brandName = params?.company;
-  const matchedBrand = brands?.find(
-    (brand: any) => brand.brand.toLowerCase() === brandName
-  );
-  const data = await getData(
-    `product-app/product?ordering=-id&brand_id=${matchedBrand.id}&offset=0&limit=0`
-  );
-  const brandProducts = data?.results;
+ 
 
   return (
     <>
@@ -45,74 +37,7 @@ const Page = async ({ params }: props) => {
             </div>
             <div className="col-lg-9 order-1 order-lg-2 pl-lg-45 ">
               <div className="row">
-                {brandProducts?.map((product: any) => {
-                  return (
-                    <div key={product?.id} className="col-md-6">
-                      <div className="blog-item mt-40">
-                        <div className="blog-thumb">
-                          <Link
-                            href={`/products/${params.company}/${formatName(
-                              product.productName
-                            )}`}
-                          >
-                            {/* <img
-                         src="assets/img/blog/blog-1.jpg"
-                         alt="blog thumb"
-                       /> */}
-                            <Image
-                              src={product.image}
-                              width={370}
-                              height={250}
-                              alt="blog-img"
-                            />
-                          </Link>
-                        </div>
-                        <div className="blog-content">
-                          <h3 className="blog-title">
-                            <Link
-                              href={`/products/${params.company}/${formatName(
-                                product.productName
-                              )}`}
-                            >
-                              {product.productName}
-                            </Link>
-                          </h3>
-                          <p>
-                            Ideas es to obtain pain of itself, because it is
-                            pain, but because occasionallyght ocean he Internet
-                            tend to a chunks as necessary with some of themoment
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-
-                {/* <div className="col-12">
-                  <div className="paginatoin-area text-center mt-40">
-                    <ul className="pagination-box">
-                      <li>
-                        <Link className="previous" href="#">
-                          <i className="fa fa-angle-left"></i>
-                        </Link>
-                      </li>
-                      <li className="active">
-                        <Link href="#">1</Link>
-                      </li>
-                      <li>
-                        <Link href="#">2</Link>
-                      </li>
-                      <li>
-                        <Link href="#">3</Link>
-                      </li>
-                      <li>
-                        <Link className="next" href="#">
-                          <i className="fa fa-angle-right"></i>
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div> */}
+                <BrandProducts companyParams={params?.company} />
               </div>
             </div>
           </div>

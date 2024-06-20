@@ -74,14 +74,6 @@ const Home = () => {
             <div className="col-lg-3 col-md-6">
               <div className="service-policy-item mt-30">
                 <div className="service-policy-icon">
-                  <Image src={icon1} alt="icon" width={50} height={50} />
-                </div>
-                <h3 className="service-policy-title">Creative Ideas</h3>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div className="service-policy-item mt-30">
-                <div className="service-policy-icon">
                   <Image src={icon2} alt="icon" width={50} height={50} />
                 </div>
                 <h3 className="service-policy-title">Low Cost</h3>
