@@ -4,6 +4,7 @@ import solution from "../../assets/Solution.png";
 import { fetchWhySoori, getData } from "@/app/lib/getData";
 import Link from "next/link";
 import TitleText from "../Testimonials/TitleText";
+import WhySooriItem from "./WhySooriItem";
 
 // export const revalidate = 60;
 const WhySoori = async () => {
@@ -36,37 +37,7 @@ const WhySoori = async () => {
           </div>
         </div>
         <div className="row mtn-30">
-          {whyReason?.map((why: any, id: number) => {
-            return (
-              <React.Fragment key={why.id}>
-                <div
-                  className="col-md-4"
-                  data-aos="fade-right"
-                  data-aos-delay={`${id * 100}`}
-                  data-aos-easing="ease-in-sine"
-                >
-                  <div className="blog-item mt-30">
-                    <div className="blog-thumb">
-                      <Link href={"#"}>
-                        <Image
-                          src={why.image}
-                          alt="policy banner"
-                          height={250} // Adjust as needed
-                          width={370} // Adjust as needed
-                        />
-                      </Link>
-                    </div>
-                    <div className="blog-content">
-                      <h3 className="blog-title">
-                        <Link href={"#"}>{why.title}</Link>
-                      </h3>
-                      <p>{why.description}</p>
-                    </div>
-                  </div>
-                </div>
-              </React.Fragment>
-            );
-          })}
+          <WhySooriItem />
         </div>
       </div>
     </section>

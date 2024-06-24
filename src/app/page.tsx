@@ -68,7 +68,7 @@ const Home = () => {
       <TrackTraceVideo />
       <HomeServices />
       <WhySoori />
-      <section className="policy-area pb-125">
+      {/* <section className="policy-area pb-125">
         <div className="container">
           <div className="row mtn-30">
             <div className="col-lg-3 col-md-6">
@@ -97,12 +97,12 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <Blog />
       <Testimonials />
 
       <Partners />
-      <Counter />
+      {/* <Counter /> */}
 
       <Scroller />
     </>

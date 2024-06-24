@@ -6,13 +6,14 @@ import Link from "next/link";
 import bg from "../../assets/redbulb-1.png";
 import bg2 from "../../assets/redbulb-2.png";
 import AOS from "aos";
+import "./MotoBanner.css";
 const MotoBanner = () => {
   useEffect(() => {
     AOS.init();
   }, []);
   return (
     <div
-      className="testimonial-wrapper testimonial-wrapper--style_2   gray-bg"
+      className="testimonial-wrapper moto-banner testimonial-wrapper--style_2   gray-bg"
       style={{
         position: "relative",
         padding: "60px 0",
@@ -23,7 +24,7 @@ const MotoBanner = () => {
       <div className="container wow fade-in-up ">
         <div className="row align-items-center">
           <Image
-            className=""
+            className="image-right"
             data-aos="fade-left"
             style={{ position: "absolute", right: "20px", bottom: "0px" }}
             src={bg}
@@ -31,7 +32,7 @@ const MotoBanner = () => {
             height={300}
           />
           <Image
-            className=""
+            className="image-left"
             data-aos="fade-left"
             style={{ position: "absolute", left: "-50px", top: "20px" }}
             src={bg2}
@@ -39,7 +40,7 @@ const MotoBanner = () => {
             height={250}
           />
           <div
-            className="col-9"
+            className="col-lg-9 col-md-12 wow fade-in-up"
             data-aos="fade-right"
             data-aos-anchor="#example-anchor"
             data-aos-offset="500"

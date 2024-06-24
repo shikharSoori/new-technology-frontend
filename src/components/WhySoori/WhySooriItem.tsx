@@ -10,12 +10,14 @@ const WhySooriItem = () => {
   const [reasonData, setReasonData] = useState<Reason[]>([]);
   useEffect(() => {
     (async () => {
-      const data = await fetchData("product-app/why-soori");
+      const data = await fetchData("product-app/why-soori?limit=0");
+      console.log(data);
       if (data && data.results) {
         setReasonData(data.results);
       }
     })();
   }, []);
+  console.log(reasonData, "reasonData");
   return (
     <>
       {reasonData?.map((why: any, id: number) => {
@@ -24,7 +26,7 @@ const WhySooriItem = () => {
             <div className="col-lg-3 col-md-6">
               <div className="service-policy-item mt-30">
                 <div className="service-policy-icon">
-                  <Image src={why.image} alt="icon" width={100} height={100} />
+                  <Image src={why.image} alt="icon" width={50} height={50} />
                 </div>
                 <h3 className="service-policy-title">{why.title}</h3>
               </div>

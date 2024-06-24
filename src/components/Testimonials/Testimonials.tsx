@@ -1,12 +1,7 @@
-import Image from "next/image";
-import React from "react";
 import Slider from "@/components/Carousel/Carousel";
-import solution from "../../assets/Solution.png";
 import { getData } from "@/app/lib/getData";
-import TestimonialContent from "./TestimonialContent";
 import TitleText from "./TitleText";
 import Link from "next/link";
-import warehouseTruck from "../../assets/warehousetruck.jpeg";
 const Testimonials = async () => {
   var testimonialSlider = {
     // dots: false,
@@ -29,18 +24,8 @@ const Testimonials = async () => {
 
   const testimonials = data?.results || [];
 
-  // Check if you should render the custom content or the testimonial list
-  const shouldRenderCustomContent = true; // Replace with your condition
 
-  const Slide = (title: any) => {
-    return (
-      <div className="testimonial-item testimonial-item--style_2 ">
-        <div className="testimonial-content">
-          <p>hello</p>
-        </div>
-      </div>
-    );
-  };
+
   return (
     <section className="testimonial-wrapper testimonial-wrapper--style_2 gray-bg section-padding fix">
       <div className="container">
@@ -49,7 +34,7 @@ const Testimonials = async () => {
             className="col-12 d-flex justify-content-center"
             style={{ fontSize: "14px" }}
           >
-            <div className="w-50">
+            <div className="section-title">
               <h2 className="h1 title text-center">
                 <TitleText
                   title={`
@@ -73,7 +58,6 @@ const Testimonials = async () => {
               <Slider {...testimonialSlider}>
                 {testimonials?.map((testimonial: any, i: number) => {
                   const maxLength = 100;
-                  console.log(testimonial);
                   const { image, name, description } = testimonial;
                   return (
                     // <TestimonialContent key={i} {...testimonial} />
@@ -107,7 +91,6 @@ const Testimonials = async () => {
                     </div>
                   );
                 })}
-            
               </Slider>
 
               {/*  */}
