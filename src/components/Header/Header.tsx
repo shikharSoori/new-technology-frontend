@@ -113,25 +113,25 @@ const Header = () => {
                           <Link href="/about">About us</Link>
                         </li>
                         <li>
-                          <Link href="/products">Solutions</Link>
+                          <Link href="/solutions">Solutions</Link>
                           <ul className="dropdown">
                             <li>
-                              <Link href="/products/wacom">
+                              <Link href="/solutions/cubixaa">
                                 Warehouse Management
                               </Link>
                             </li>
                             <li>
-                              <Link href="/products/hid">
+                              <Link href="/solutions/assets">
                                 Assets & Maintainence
                               </Link>
                             </li>
                             <li>
-                              <Link href="/products/logitech">
+                              <Link href="/solutions/service">
                                 Service & Maintainence
                               </Link>
                             </li>
                             <li>
-                              <Link href="/products/zebra">HR & Payroll</Link>
+                              <Link href="/solutions/zebra">HR & Payroll</Link>
                             </li>
                           </ul>
                         </li>
@@ -270,20 +270,20 @@ const Header = () => {
                       </ul>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link href="/products">Solutions</Link>
+                      <Link href="/solutions">Solutions</Link>
                       {/* Add more menu items as needed */}
                       <ul className="dropdown">
                         <li>
-                          <Link href="/products/wacom">Wacom</Link>
+                          <Link href="/solutions/wacom">Warehouse</Link>
                         </li>
                         <li>
-                          <Link href="/products/hid">HID</Link>
+                          <Link href="/solutions/hid">HID</Link>
                         </li>
                         <li>
-                          <Link href="/products/logitech">Logitech</Link>
+                          <Link href="/solutions/logitech">Logitech</Link>
                         </li>
                         <li>
-                          <Link href="/products/zebra">Zebra</Link>
+                          <Link href="/solutions/zebra">Zebra</Link>
                         </li>
                       </ul>
                     </li>

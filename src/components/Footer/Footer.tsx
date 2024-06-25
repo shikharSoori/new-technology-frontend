@@ -9,28 +9,20 @@ import Slider from "@/components/Carousel/Carousel";
 import BlogCard from "../Blog/BlogCard";
 import { formatName } from "@/utils/FormatName";
 import React from "react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa6";
 
 const Footer = async () => {
-  const data = await getData(`blog-app/blog?limit=3`);
-  const blogs = data?.results;
-
-  var brandSlider = {
-    dots: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: false,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 500,
-  };
-  const maxLength = 100;
-
   return (
     <footer>
-      <div className="footer-widget-area gray-bg section-padding pb-125">
+      <div className="footer-widget-area gray-bg section-padding ">
         <div className="container">
           <div className="row mtn-40">
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-6 col-md-6">
               <div className="footer-single-widget mt-40">
                 <div className="widget-logo">
                   <Link href="/">
@@ -56,11 +48,25 @@ const Footer = async () => {
                       www.example.com
                     </li>
                   </ul>
+                  <div className="mt-4 footer-social-link  d-flex">
+                    <Link href="#">
+                      <FaFacebook size={24} />
+                    </Link>
+                    <Link href="#">
+                      <FaTwitter size={24} />
+                    </Link>
+                    <Link href="#">
+                      <FaInstagram size={24} />
+                    </Link>
+                    <Link href="#">
+                      <FaLinkedin size={24} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-2 col-md-6">
               <div className="footer-single-widget mt-40">
                 <h3 className="widget-title">Our Link</h3>
                 <div className="widget-body">
@@ -78,33 +84,12 @@ const Footer = async () => {
 
                     <li>
                       <Link
-                        href="products/wacom"
-                        className="d-flex align-items-center"
-                        style={{ gap: "10px" }}
-                      >
-                        <MdKeyboardDoubleArrowRight />
-                        Wacom
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
                         href="/products"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
                         Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/products/logitech"
-                        className="d-flex align-items-center"
-                        style={{ gap: "10px" }}
-                      >
-                        <MdKeyboardDoubleArrowRight />
-                        Logitech
                       </Link>
                     </li>
                     <li>
@@ -119,32 +104,12 @@ const Footer = async () => {
                     </li>
                     <li>
                       <Link
-                        href="products/zebra"
-                        className="d-flex align-items-center"
-                        style={{ gap: "10px" }}
-                      >
-                        <MdKeyboardDoubleArrowRight />
-                        Zebra
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
                         href="/about"
                         className="d-flex align-items-center"
                         style={{ gap: "10px" }}
                       >
                         <MdKeyboardDoubleArrowRight />
                         About Us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/products/hid"
-                        className="d-flex align-items-center"
-                        style={{ gap: "10px" }}
-                      >
-                        <MdKeyboardDoubleArrowRight />
-                        HID
                       </Link>
                     </li>
 
@@ -172,87 +137,107 @@ const Footer = async () => {
                 </div>
               </div>
             </div>
-
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-2 col-md-6">
               <div className="footer-single-widget mt-40">
-                <h3 className="widget-title">Blogs</h3>
-                {/* <div className="widget-body news-subtitle">
-                  <p className="desc">
-                    Subscribe our Newsletter because occasionallyght ocean he
-                    and he can make some of noise to us
-                  </p>
-                  <p>
-                    <b>
-                      To get all latest update and news Subscribe our newsletter
-                      now!
-                    </b>
-                  </p>
-                  <div className="newsletter-inner">
-                    <form id="mc-form" onSubmit={onSubmit} ref={formRef}>
-                      <input
-                        type="email"
-                        className="news-field"
-                        id="mc-email"
-                        placeholder="Enter your email here"
-                      />
-                      <button className="btn btn-all" id="mc-submit">
-                        Subscribe
-                      </button>
-                    </form>
-                    <div className="mailchimp-alerts">
-                      <div className="mailchimp-submitting"></div>
-                      <div className="mailchimp-success"></div>
-                      <div className="mailchimp-error"></div>
-                    </div>
-                  </div>
-                </div> */}
-                {/* <div className="blog-item mt-40">
-                  <div className="blog-thumb">
-                    <Link href={`/blog/${formatName(blogName)}`}>
-                      <Image
-                        height={250}
-                        src={blogImage}
-                        alt={"hello"}
-                        width={370}
-                      />
-                    </Link>
-                  </div>
-                  <div className="blog-content">
-                    <h3 className="blog-title">
-                      <Link href={`/blog/${formatName(blogName)}`}>
-                        {blogName}
+                <h3 className="widget-title">Solutions</h3>
+                <div className="widget-body">
+                  <ul className="useful-link">
+                    <li>
+                      <Link
+                        href="solutions/cubix"
+                        className="d-flex align-items-center"
+                        style={{ gap: "10px" }}
+                      >
+                        <MdKeyboardDoubleArrowRight />
+                        Cubix
                       </Link>
-                    </h3>
+                    </li>
 
-                    {description.length >= maxLength
-                      ? `${description.substr(0, maxLength).trim()}...`
-                      : description}
+                    <li>
+                      <Link
+                        href="solutions/inService"
+                        className="d-flex align-items-center"
+                        style={{ gap: "10px" }}
+                      >
+                        <MdKeyboardDoubleArrowRight />
+                        InService
+                      </Link>
+                    </li>
 
-                    <div className="blog-meta">
-                      <Link href="#">{createdDate}</Link>
-                    </div>
-                  </div>
-                </div> */}
-                <Slider {...brandSlider}>
-                  {blogs?.map((blogitem: any) => {
-                    return (
-                      <React.Fragment key={blogitem.id}>
-                        <div className="blog-item ">
-                          <div className="blog-thumb">
-                            <Link href={`/blog/${formatName(blogitem.name)}`}>
-                              <Image
-                                height={250}
-                                src={blogitem.image}
-                                alt={"hello"}
-                                width={370}
-                              />
-                            </Link>
-                          </div>
-                        </div>
-                      </React.Fragment>
-                    );
-                  })}
-                </Slider>
+                    <li>
+                      <Link
+                        href="solutions/activ"
+                        className="d-flex align-items-center"
+                        style={{ gap: "10px" }}
+                      >
+                        <MdKeyboardDoubleArrowRight />
+                        Activ
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="solutions/trackline"
+                        className="d-flex align-items-center"
+                        style={{ gap: "10px" }}
+                      >
+                        <MdKeyboardDoubleArrowRight />
+                        Trackline
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-2 col-md-6">
+              <div className="footer-single-widget mt-40">
+                <h3 className="widget-title">Products</h3>
+                <div className="widget-body">
+                  <ul className="useful-link">
+                    <li>
+                      <Link
+                        href="products/wacom"
+                        className="d-flex align-items-center"
+                        style={{ gap: "10px" }}
+                      >
+                        <MdKeyboardDoubleArrowRight />
+                        Wacom
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="/products/logitech"
+                        className="d-flex align-items-center"
+                        style={{ gap: "10px" }}
+                      >
+                        <MdKeyboardDoubleArrowRight />
+                        Logitech
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="products/zebra"
+                        className="d-flex align-items-center"
+                        style={{ gap: "10px" }}
+                      >
+                        <MdKeyboardDoubleArrowRight />
+                        Zebra
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="/products/hid"
+                        className="d-flex align-items-center"
+                        style={{ gap: "10px" }}
+                      >
+                        <MdKeyboardDoubleArrowRight />
+                        HID
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

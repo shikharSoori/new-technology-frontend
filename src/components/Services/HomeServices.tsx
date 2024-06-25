@@ -34,7 +34,7 @@ const HomeServices = async () => {
   };
 
   return (
-    <section className="policy-area-02 section-padding gray-bg fix">
+    <section className="policy-area-02 section-padding  fix">
       <div className="container">
         <div className="section-title mb-4 text-center">
           <h2 className="h1 title">

@@ -13,9 +13,9 @@ const Partners = async () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     autoplay: true,
-    autoplaySpeed: 500,
+    autoplaySpeed: 1000,
   };
   const data = await getData(`product-app/our-partner`);
   const partners = data?.results;

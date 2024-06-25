@@ -13,7 +13,7 @@ const MotoBanner = () => {
   }, []);
   return (
     <div
-      className="testimonial-wrapper moto-banner testimonial-wrapper--style_2   gray-bg"
+      className="testimonial-wrapper moto-banner testimonial-wrapper--style_2   "
       style={{
         position: "relative",
         padding: "60px 0",

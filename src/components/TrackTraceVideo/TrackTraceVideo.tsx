@@ -9,7 +9,7 @@ const TrackTraceVideo = () => {
   }, []);
   return (
     <>
-      <section className="testimonial-wrapper testimonial-wrapper--style_2  section-padding fix">
+      <section className="testimonial-wrapper testimonial-wrapper--style_2  section-padding fix gray-bg">
         <div className="container">
           <div className="row align-items-center">
             <div

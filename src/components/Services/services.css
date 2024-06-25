@@ -22,13 +22,22 @@
   position: relative;
 }
 .card:hover .card-image {
-  background-color: rgb(208, 10, 34);
+  /* background-color: rgb(208, 10, 34);
   background-color: radial-gradient(
     circle,
     rgba(208, 10, 34, 0.9836309523809523) 1%,
     rgba(147, 41, 30, 1) 100%
   );
-  background-image: none !important;
+  background: hsla(354, 71%, 44%, 1); */
+background: none  ;
+  /* background: linear-gradient(
+    360deg,
+    hsla(354, 71%, 44%, 1) 0%,
+    hsla(8, 60%, 54%, 1) 100%
+  ); */
+
+
+  /* background-image: none !important; */
 }
 /* .overlay {
   position: absolute;

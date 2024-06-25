@@ -3608,8 +3608,16 @@ header {
 .useful-link li {
   line-height: 1.7;
   margin-bottom: 20px;
-  width: 50%;
+  /* width: 50%; */
   float: left;
+}
+
+.footer-social-link {
+  gap: 20px;
+
+  a:hover {
+    color: #bf202f;
+  }
 }
 
 .useful-link li a {
@@ -3676,15 +3684,18 @@ header {
 }
 
 .footer-bottom {
-  padding: 21px 0;
+  background: #bf202f;
+  padding: 6px 0;
 }
 
 .copyright-text p {
-  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  /* font-weight: 600; */
 }
 
 .copyright-text p a {
-  color: #bf202f;
+  color: #fff;
 }
 
 @media only screen and (min-width: 1600px) {
