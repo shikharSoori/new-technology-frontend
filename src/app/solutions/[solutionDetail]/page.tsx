@@ -35,7 +35,7 @@ const Page = async ({ params }: any) => {
   return (
     <div>
       <AboutHero title={"solutions"} subTitle={solutionName} />
-      <section className="blog-area 31697 section-padding">
+      <section className="blog-area ">
         <div className="container">
           <div className="row mt-40">
             <div className="col-lg-12 order-1 order-lg-2 ">
